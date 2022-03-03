@@ -1,0 +1,3 @@
+MAX31865_v1.c:5:7:max31865_gpio_init	16	static
+MAX31865_v1.c:12:7:max31865_init	24	static
+MAX31865_v1.c:40:10:max31865_getTemp	112	static

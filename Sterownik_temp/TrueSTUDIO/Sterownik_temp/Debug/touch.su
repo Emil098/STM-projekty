@@ -1,0 +1,14 @@
+touch.c:13:9:map	24	static
+touch.c:17:7:map_float	32	static
+touch.c:21:6:check_version	24	static
+touch.c:37:6:send_comand	48	dynamic
+touch.c:45:6:send_comand_n_data	80	dynamic
+touch.c:54:6:disp_status	48	dynamic
+touch.c:64:6:disable_touch	40	dynamic
+touch.c:82:6:reg_start	48	dynamic
+touch.c:99:6:calibration_inset	56	dynamic
+touch.c:121:6:register_read	48	dynamic
+touch.c:141:6:calibration_mode	56	dynamic
+touch.c:176:6:enable_touch	40	dynamic
+touch.c:192:7:get_pos	56	static
+touch.c:240:6:touch_init	8	static
