@@ -7,8 +7,7 @@
 
 #include "touch.h"
 
-
-
+// funkcje mapuj¹ce przeliczaj¹ wartoœci zmiennych
 
 int32_t map(int32_t x, int32_t in_min, int32_t in_max, int32_t out_min, int32_t out_max){
 	return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
@@ -99,7 +98,9 @@ void reg_start(){  // command 0x22  REGISTER_START_ADDRESS_REQUEST
 void calibration_inset(){   // command 0x21  REGISTER_WRITE
 	uint8_t len_cmd = 7;
 	uint8_t len_recv = 4;
+	// datasheet strona 39
 //	uint8_t command[7] = {0x55, 0x05, 0x21, 0x00, 0x2E, 0x01, 0x19};
+	// wartoœci po kalibracji manualnej
 	uint8_t command[7] = {0x55, 0x05, 0x21, 0x00, 0x0A, 0x01, 0x00};
 
 	uint8_t successful_tab[4] = { 0x55, 0x02, 0x00, 0x21};
@@ -240,7 +241,7 @@ point get_pos(){
 void touch_init(){
 	disable_touch();
 	reg_start();
-	calibration_inset();
+	calibration_inset(); // kalibracja automatyczna dane z datasheeta
 	enable_touch();
 //	HAL_UART_Receive(&uart,recive,20,50);
 

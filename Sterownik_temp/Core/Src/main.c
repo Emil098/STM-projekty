@@ -428,7 +428,12 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 				set_pwm_otp(OBIEG_PWM_MAX,current_val);
 				diff_otp.voltage_val[current_val] = OBIEG_U_MAX;
 			}
+
+			// warunek dla ró¿nicy temp. mniejszej ni¿ minimalna z uwzglêdnieniem histerezy + 0,25 stopnie
 			if(diff_otp.temp_diff[current_val] > (diff_vals.turn_on_val[current_val] + 0.25) && diff_otp.hysteresis[current_val] == 1){
+				// wy³¹czenie pwm-a pompki obiegu
+				// ustawienie nap. pompki = 0V
+				// wyzerowanie licznika rozruchu pompki
 				set_pwm_otp(0,current_val);
 				diff_otp.voltage_val[current_val] = 0;
 				obieg_cnt = 0;
@@ -487,10 +492,12 @@ int main(void)
 //  TIM2->CCR4 = 1430;	// PWM 1 piec 8,5V
 //  TIM3->CCR1 = 1093;	// PWM 2 solar 6,5V
 //  TIM3->CCR2 = 1010;	// PWM 3 cyrkulacja 6V
+  // ustawienie pwm-ow pompek na 0
   set_pwm_otp(0,PIEC_DIFF);
   set_pwm_otp(0,SOLAR_DIFF);
   set_pwm_otp(0,OBIEG_DIFF);
 
+  // inicjacja wyœwietlacza
   LCD_Init();
   LCD_FillScreen(BLACK);
   LCD_SetTextColor(WHITE,BLACK);
@@ -499,29 +506,27 @@ int main(void)
   touch_init();
   LCD_FillScreen(BLACK);
 
+  // zainicjowanie czyjnika temp. dla obiegu (i2c)
   TC74A0_init(&hi2c2);
 
+  // zainicjowanie pozosta³ych czujników pompek rezystancyjnych (PT100)
   max31865_gpio_init(&hspi2);
   max31865_init(ZASOBNIK);
   max31865_init(SOLAR);
   max31865_init(PIEC);
 
+  // pierwszy odczyt temperatury ze wszystkich czujnikow
   temp.obieg_t = TC74A0_read_temp();
   temp.zasobnik_t = max31865_getTemp(ZASOBNIK);
   temp.solar_t = max31865_getTemp(SOLAR);
   temp.piec_t = max31865_getTemp(PIEC);
 
-
-//  FLASH_PageErase(0)
-//  HAL_FL
-
-
-//  diff_vals = diff_val_init();
-//  Flash_save_diff(diff_vals);
-  //  differntial_vals flash_dif = Flash_read_diff();
+  // odczyt ró¿nic temperatur z pamiêci flash uC
   diff_vals = Flash_read_diff();
 
+  // inicjacja struktury przechowuj¹cej dane o stanie pracy urz¹dzenia oraz o po³o¿eniach przycisków
   cr_screen = btn_init();
+  // wyœwietlenie ekranu g³ównego
   print_screen(cr_screen.menu_state);
 
 
@@ -537,47 +542,34 @@ int main(void)
   {
 //	  HAL_GPIO_WritePin(LCD_LED_GPIO_Port,LCD_LED_Pin,0);
 
-
+	  // cykliczny odczyt czasu, temp. wszystkich czujników, stanu wyœwietlacza dotykowego
 	  t = read_time();
 	  temp.obieg_t = TC74A0_read_temp();
 	  temp.zasobnik_t = max31865_getTemp(ZASOBNIK);
 	  temp.solar_t = max31865_getTemp(SOLAR);
 	  temp.piec_t = max31865_getTemp(PIEC);
 	  ts_p = get_pos();
-//
+
+	  // sprawdzanie stanu pracy urz¹dzenia
 	  switch(cr_screen.menu_state){
-	  case MAIN_SCREEN:
-	  if(t.sec != t_last.sec){
-		  if(diff_otp.hysteresis[OBIEG_DIFF] && obieg_cnt < OBIEG_TIME)obieg_cnt++;
-		  update_main_screen(temp,t,diff_otp);
+	  case MAIN_SCREEN:  // dla ekranu g³ównego
+	  if(t.sec != t_last.sec){  // aktualizowanie wyœwietlacza co sekundê
+		  if(diff_otp.hysteresis[OBIEG_DIFF] && obieg_cnt < OBIEG_TIME)obieg_cnt++; // zwiêkszanie licznika rozruchu pompki obiegu
+		  update_main_screen(temp,t,diff_otp); // aktualizacja wskazañ na ekranie g³ównym
 	  }
 	  break;
-	  case TIME_SCREEN:
-		  t_in_timer = update_time_screen(ts_p);
+	  case TIME_SCREEN:  // dla ekranu ustawieñ godziny
+		  t_in_timer = update_time_screen(ts_p);  // aktualizacja ekranu menu w oparciu o wspó³rzêdne dotkniêtego pkt na matrycy
 		  break;
+
+	  // dla ekranu ustawieñ ró¿nicy temp.
 	  case PUMP_T_MIN_SCREEN:
 	  case PUMP_T_MAX_SCREEN:
-		  diff_menu = update_temp_screen(ts_p,cr_screen.menu_state);
+		  diff_menu = update_temp_screen(ts_p,cr_screen.menu_state);  // aktualizacja ekranu menu w oparciu o wspó³rzêdne dotkniêtego pkt na matrycy
 		  break;
 	  }
-	  t_last = t;
 
-
-
-
-//	  if(ts_p.p != NO_TOUCH){
-//	 		  LCD_FillCircle(ts_p.x,ts_p.y,5,RED);
-//
-//	 		  LCD_SetCursor(100,0);
-//	 		  LCD_Printf("odczyt");
-//	 		  LCD_SetCursor(100,20);
-//	 		  LCD_Printf("x - %d  ",ts_p.x);
-//	 		  LCD_SetCursor(100,40);
-//	 		  LCD_Printf("y - %d  ",ts_p.y);
-//	 		  LCD_SetCursor(100,60);
-//	 		  LCD_Printf("p - %d",ts_p.p);
-//
-//	 	  }
+	  t_last = t;  // przepisanie struktury czasu (aby porównac j¹ w nastêpnym cyklu
 
     /* USER CODE END WHILE */
 

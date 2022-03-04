@@ -51,7 +51,7 @@ typedef struct{
 	uint16_t btn_y_h[SCREEN_QUANTITY][10];
 
 	uint8_t menu_state;
-}btn_location;
+}btn_location;  // przechowuje po³o¿enie przycisków oraz ich wymiary a tak¿e stan pracy urz¹dzenia
 
 typedef struct{
 	float temp_diff[3];
@@ -67,13 +67,13 @@ typedef struct{
 	Max_read piec_t;
 	tc obieg_t;
 	temperature_differential_val diff;
-}temperature;
+}temperature;  // przechowuje odczyty wszystkich czujników temp
 
 typedef struct{
 	int8_t turn_on_val[3];
 	int8_t turn_12V_val[3];
 //	uint8_t diff_in_use;
-}differntial_vals;
+}differntial_vals;  // przechowuje ró¿nice temp za³¹czania pompek
 
 typedef struct{
 	uint8_t sec;
@@ -82,50 +82,66 @@ typedef struct{
 	uint8_t day;
 	uint8_t mon;
 	uint8_t year;
-}time;
-
-btn_location btn;
-
-temperature temp_last;
-
-time t0;
-
-differntial_vals diff;
-
-uint8_t diff_in_use;
-
-int8_t menu_vals[3];
+}time;  // przechowuje wskazania czasu
 
 
+// inicjacja struktur globalnych biblioteki
+
+btn_location btn; // przechowuje po³o¿enie przycisków oraz ich wymiary a tak¿e stan pracy urz¹dzenia
+
+temperature temp_last; // struktura u¿ywana w funkcji update_main_screen
+
+time t0; // struktura u¿ywana w funkcji update_time_screen
+
+differntial_vals diff;  // struktura zwracaj¹ca ró¿nice temp w funkcji update_temp_screen
+
+uint8_t diff_in_use;  // zmienna okreœlaj¹ca aktualnie modyfikowany licznik w funkcji update_temp_screen
+
+int8_t menu_vals[3];  // wartoœci ró¿nic temp modyfikowane w funkcji update_temp_screen
 
 
 
+
+//funkcja rysuj¹ca ekrany menu oraz ekran g³ówny w zale¿noœci od zmiennej stanu pracy urz¹dzenia
 void print_screen(uint8_t scr);
 
+// funkcja ustawiaj¹ca domyœlne ustawienia ró¿nic temperatur
 differntial_vals diff_val_init();
 
+// funkcja inicjuj¹ca po³o¿enie i wymiary wszystkich przycisków
 btn_location btn_init();
 
+// funkcja aktualizuj¹ca strukturê ró¿nic temp. wew. biblioteki
 void get_diff_struct(differntial_vals c);
 
+// funkcja wyœwieltaj¹ca przycisk wyjœcia z menu
 void exit_sign(uint16_t x0, uint16_t y0);
 
+// funkcja wyœwieltaj¹ca przycisk zatwierdzenia
 void ok_sign(uint16_t x0, uint16_t y0);
 
+// funkcja aktualizuj¹ca wskazania na ekranie g³ównym
 void update_main_screen(temperature temp, time tim ,temperature_differential_val diff_in);
 
+// funkcja aktualizuj¹ca wskazania na ekranie zale¿nie od stanu pracy urz¹dzenia (menu ró¿nic temp)
 differntial_vals update_temp_screen(point ts_p,uint8_t scr);
 
+//	funkcja aktualizuj¹ca ekran menu ustawieñ godziny
 time update_time_screen(point ts_p);
 
+// funkcja nadpisuj¹ca strukturê lokaln¹ czasu
 void get_time(time c);
 
+// funkcja resetuj¹ca wskazania temp.
 temperature temp_reset();
 
+// funkcja wyœwieltaj¹ca przycisk zwiêkszania licznika (strza³ka w górê)
 void up_sign(uint16_t x0, uint16_t y0,uint16_t bg_colour ,uint16_t colour);
 
+// funkcja wyœwieltaj¹ca przycisk zmniejszania licznika (strza³ka w dó³)
 void down_sign(uint16_t x0, uint16_t y0,uint16_t bg_colour ,uint16_t colour);
 
+// funkcja wyœwieltaj¹ca ikonkê ustawieñ
 void setting_sign(int16_t x0, int16_t y0,uint16_t colour);
 
 #endif
