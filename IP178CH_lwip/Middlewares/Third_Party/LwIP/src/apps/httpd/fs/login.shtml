@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Emil Rudnicki</h2>
+
+<p>Wpisz login i haslo aby zalogowac sie do systemu</p>
+
+<form action="/login.cgi">
+  <label for="fname">Login:</label><br>
+  <input type="text" id="username" name="username" value=""><br>
+  <label for="lname">Haslo:</label><br>
+  <input type="password" id="password" name="password" minlength="8" required><br><br>
+  <input type="submit" value="Zaloguj">
+</form> 
+
+<p>Po zalogowaniu nastapi przekierowanie na strone sterujaca ledami</p>
+
+</body>
+</html>

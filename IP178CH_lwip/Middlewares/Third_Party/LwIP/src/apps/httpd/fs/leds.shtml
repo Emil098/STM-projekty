@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<title>Sterowanie LED-ami</title>
+<meta charset="UTF-8" />
+</head>
+<body>
+<p>Ta strona pozwala na sterowanie dwiema diodami aby zatwierdzic ustawienia kliknij przycisk wyslij</p>
+<form method="get" action="/leds.cgi">
+<!--#tag1-->LED1 
+<br>
+<!--#tag2-->LED2 + przekierowanie na strone glowna
+<br>
+<!--#tag3-->
+<br>
+<input value="Wyslij" type="submit">
+</form>
+</body>
+</html>
