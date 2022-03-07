@@ -82,6 +82,8 @@ int main(void)
 
   /* USER CODE BEGIN SysInit */
   MX_GPIO_Init();
+
+  // we need to reset IP178CH before initializing RMII and http
   HAL_GPIO_WritePin(RESET_IP_GPIO_Port,RESET_IP_Pin,0);
 
     HAL_Delay(500);
@@ -91,7 +93,6 @@ int main(void)
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
-  MX_GPIO_Init();
   MX_LWIP_Init();
   /* USER CODE BEGIN 2 */
   http_server_init(); // library - httpssi
