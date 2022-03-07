@@ -50,12 +50,7 @@
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 /* USER CODE BEGIN PFP */
-//void http_server_init (void)
-//{
-//	httpd_init();
-//
-//	http_set_ssi_handler(ssi_handler, (char const**) TAGS, 3);
-//}
+
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -87,34 +82,31 @@ int main(void)
 
   /* USER CODE BEGIN SysInit */
   MX_GPIO_Init();
-
-  // we need to reset IP178CH before initializing RMII and http
   HAL_GPIO_WritePin(RESET_IP_GPIO_Port,RESET_IP_Pin,0);
 
-  HAL_Delay(500);
+    HAL_Delay(500);
 
-  HAL_GPIO_WritePin(RESET_IP_GPIO_Port,RESET_IP_Pin,1);
-  HAL_Delay(2000);
+    HAL_GPIO_WritePin(RESET_IP_GPIO_Port,RESET_IP_Pin,1);
+    HAL_Delay(2000);
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
+  MX_GPIO_Init();
   MX_LWIP_Init();
   /* USER CODE BEGIN 2 */
-
-  http_server_init();
+  http_server_init(); // library - httpssi
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  // eth routine
+	  	  ethernetif_input(&gnetif);
+	  	  sys_check_timeouts();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-
-	  // eth routine
-	  ethernetif_input(&gnetif);
-	  sys_check_timeouts();
   }
   /* USER CODE END 3 */
 }
