@@ -41,6 +41,10 @@
 
 /* USER CODE BEGIN Includes */
 
+// datasheet lsm303d
+// https://www.pololu.com/file/0J703/LSM303D.pdf
+
+
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -50,26 +54,26 @@ UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
-//#define lsmReadAddr 0x3B
-//#define lsmWriteAddr 0x3A
-//#define WHO_AM_I 0x0F
-//#define OUT_TEMP 0x05
-//#define OUT_X_L_A 0x28
-//#define OUT_X_H_A 0x29
-//#define OUT_Y_L_A 0x2A
-//#define OUT_Y_H_A 0x2B
-//#define OUT_Z_L_A 0x2C
-//#define OUT_Z_H_A 0x2D
-//
-//#define CTRL_REG1_A 0x20
-//#define CTRL_REG2_A 0x21
-//#define CTRL_REG3_A 0x22
-//#define CTRL_REG4_A 0x23
-//#define CTRL_REG5_A 0x24
-//#define CTRL_REG6_A 0x25
-//#define CRA_REG_M 0x00
-//#define CRB_REG_M 0x01
-//#define MR_REG_M 0x02
+#define lsmReadAddr 0x3B
+#define lsmWriteAddr 0x3A
+#define WHO_AM_I 0x0F
+#define OUT_TEMP 0x05
+#define OUT_X_L_A 0x28
+#define OUT_X_H_A 0x29
+#define OUT_Y_L_A 0x2A
+#define OUT_Y_H_A 0x2B
+#define OUT_Z_L_A 0x2C
+#define OUT_Z_H_A 0x2D
+
+#define CTRL_REG1_A 0x20
+#define CTRL_REG2_A 0x21
+#define CTRL_REG3_A 0x22
+#define CTRL_REG4_A 0x23
+#define CTRL_REG5_A 0x24
+#define CTRL_REG6_A 0x25
+#define CRA_REG_M 0x00
+#define CRB_REG_M 0x01
+#define MR_REG_M 0x02
 
 /* USER CODE END PV */
 
@@ -84,7 +88,7 @@ static void MX_I2C1_Init(void);
 
 
 /////////////////  uart  ////////////////////
-/*
+
 void uart_text(char* StringPtr){
 
 	while(*StringPtr != 0){
@@ -127,12 +131,12 @@ void uart_nr_int(int16_t nr){
 void uart_ln(void){
 	HAL_UART_Transmit(&huart2,"\n",1,1000);
 }
-*/
+
 ///////////////////////////  koniec   ///////////////////////////
 
 
 ///////////////////////////  lsm303d  ///////////////////////////
- /*
+
 
 
 void lsm_write_1(uint8_t reg,uint8_t val){
@@ -175,8 +179,8 @@ int lsm_getAcc_z(void){
 	return z;
 }
 uint8_t lsm_init(void){
-	lsm_write_1(CTRL_REG5_A,0b10011000);  // w³ odczyt temp
-	lsm_write_1(CTRL_REG1_A,0x40|0x07);  //w³ akcelerometr ustaw f=25hz
+	lsm_write_1(CTRL_REG5_A,0b10011000);  // wl odczyt temp
+	lsm_write_1(CTRL_REG1_A,0x40|0x07);  //wl akcelerometr ustaw f=25hz
 	uint8_t ver,ok=0;
 	ver=lsm_read_1(WHO_AM_I);
 	if(ver==73)ok=1;
@@ -184,7 +188,7 @@ uint8_t lsm_init(void){
 }
 
 
-*/
+
   ///////////////////////////  koniec  //////////////////////////
 
 

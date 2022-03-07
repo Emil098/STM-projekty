@@ -1,0 +1,7 @@
+Opis:
+Celem sterownika bramy jest koltrolownaie pracy silnika pr¹du sta³ego z przek³adni¹ (podnosz¹cego i opuszczaj¹cego bramê). Na wale silnika zamontowane s¹ magnesy, a do podstawy
+przymocowany zosta³ czujnik hala. Dziêki temu uC zlicza impulsy i wyznacza aktualn¹ pozycjê bramy. Do sterownika do³¹czony jest 2-kana³owy modó³ radiowy (pilota), wciœniêcie odpowiedniego
+przycisku powodujê reakcjê. Zale¿nie od przycisku brama zostaje otwierana lub zamykana, gdzie pojedyñcze wciœniêcie przycisku otwierania powoduje otworzenie bramy do po³owy, 
+a dwukrotne otworzenie bramy ca³kowicie. Sterownik posiada funkcjê SoftStart-u (z wykorzystaniem PWM-a) co zapewnia p³ynny roozruch silnika. Dodatkowo jako zabezpieczenie 
+mierzony jest pr¹d p³yn¹cy przez silnik, kiedy zostanie on przekroczony (brama napotka przeszkodê) brama zatrzyma siê. Dodatkowym zabezpieczeniem jest zastosowanie górnej i dolej
+krañcówki, której za³¹czenie powoduje wyjœcie z procedury zamykania / otwierania. 
