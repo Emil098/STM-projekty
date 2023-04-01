@@ -1,15 +1,15 @@
 Opis:
-Projekt zawiera prototyp strony internetowej opartej na bibliotece lwip. Na p³ytce pcb znajduj¹ siê: mikrokontroler STM107VCT oraz uk³ad IP178CH (zarz¹dzalny switch) który do komunikacji wykorzystuje interfesj RMII. W sk³ad strony wchodz¹: index.html (strona g³ówna), error.html (pojawia siê po wpisaniu b³êdnego adresu strony), leds.shtml (strona steruj¹ca 3 ledami) oraz login.shtml (strona w której wpisanie poprawnego loginu i has³a powduje przekierowanie do leds.shtml) Idê¹ projektu jest zaprezentowanie dzia³ania serwera http, z którego mikroprocesor mo¿e zarówno pobieraæ dane (przez zastosowanie CGI), jak równie¿ aktualizowaæ aktualizowaæ treœci na poszczególnych stronach (przy pomocy SSI). Strony internetowe napisane w htmlu znajduj¹ siê w folderze LWIP_v4\Middlewares\Third_Party\LwIP\src\apps\httpd\fs\
+Projekt zawiera prototyp strony internetowej opartej na bibliotece lwip. Na pÅ‚ytce pcb znajdujÄ… siÄ™: mikrokontroler STM107VCT oraz ukÅ‚ad IP178CH (zarzÄ…dzalny switch) ktÃ³ry do komunikacji wykorzystuje interfesj RMII. W skÅ‚ad strony wchodzÄ…: index.html (strona gÅ‚Ã³wna), error.html (pojawia siÄ™ po wpisaniu bÅ‚Ä™dnego adresu strony), leds.shtml (strona sterujÄ…ca 3 ledami) oraz login.shtml (strona w ktÃ³rej wpisanie poprawnego loginu i hasÅ‚a powduje przekierowanie do leds.shtml) IdÄ™Ä… projektu jest zaprezentowanie dziaÅ‚ania serwera http, z ktÃ³rego mikroprocesor moÅ¼e zarÃ³wno pobieraÄ‡ dane (przez zastosowanie CGI), jak rÃ³wnieÅ¼ aktualizowaÄ‡ aktualizowaÄ‡ treÅ›ci na poszczegÃ³lnych stronach (przy pomocy SSI). Strony internetowe napisane w htmlu znajdujÄ… siÄ™ w folderze LWIP_v4\Middlewares\Third_Party\LwIP\src\apps\httpd\fs\
 
-Wa¿ne informacje:
-- W bibliotece lwipopts.h nale¿y zmieniæ wartoœæ makra #define HTTPD_USE_CUSTOM_FSDATA 0, katalog LWIP\Target.
+WaÅ¼ne informacje:
+- W bibliotece lwipopts.h naleÅ¼y zmieniÄ‡ wartoÅ›Ä‡ makra #define HTTPD_USE_CUSTOM_FSDATA 0, katalog LWIP\Target.
 
-- Przed zainicjowaniem rmii nale¿y zresetowaæ IP178CH poprzez podanie stanu niskiego na odpowiednie wyjœcie gpio w projekcie oznaczone jako RESET_IP.
+- Przed zainicjowaniem rmii naleÅ¼y zresetowaÄ‡ IP178CH poprzez podanie stanu niskiego na odpowiednie wyjÅ›cie gpio w projekcie oznaczone jako RESET_IP.
 
-- Procesor musi wystawiæ zegar na wyjœciu MCO f=25MHz, bez tego switch nie zacznie dzia³aæ.
+- Procesor musi wystawiÄ‡ zegar na wyjÅ›ciu MCO f=25MHz, bez tego switch nie zacznie dziaÅ‚aÄ‡.
 
-- Do pliku fs.h (katalog Middlewares\Third_Party\LwIP\src\apps\httpd) nale¿y dodaæ makro #define FS_FILE_FLAGS_SSI 0x08 (w starej bibliotece LWIP go nie ma).
+- Do pliku fs.h (katalog Middlewares\Third_Party\LwIP\src\apps\httpd) naleÅ¼y dodaÄ‡ makro #define FS_FILE_FLAGS_SSI 0x08 (w starej bibliotece LWIP go nie ma).
 
-- Po dokonaniu zmian w pliakch .html i .shtml nale¿y uruchomiæ program makeFSdata.exe (w folderze d:\stm projekty\LWIP_v4\Middlewares\Third_Party\LwIP\src\apps\httpd\) nastêpnie przebudowaæ projekt.
+- Po dokonaniu zmian w pliakch .html i .shtml naleÅ¼y uruchomiÄ‡ program makeFSdata.exe (w folderze \Middlewares\Third_Party\LwIP\src\apps\httpd\) nastÄ™pnie przebudowaÄ‡ projekt.
 
 - Za halndlery ssi i cgi odpowiada biblioteka http_ssi .
