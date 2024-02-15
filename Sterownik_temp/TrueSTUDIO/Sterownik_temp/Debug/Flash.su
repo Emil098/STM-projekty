@@ -1,4 +1,0 @@
-Flash.c:4:10:Flash_Write_Data	48	static
-Flash.c:55:6:Flash_Read_Data	24	static
-Flash.c:67:6:Flash_save_diff	40	static
-Flash.c:74:18:Flash_read_diff	48	static
