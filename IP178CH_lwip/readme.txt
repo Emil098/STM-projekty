@@ -1,15 +1,15 @@
 Opis:
-Projekt zawiera prototyp strony internetowej opartej na bibliotece lwip. Na płytce pcb znajdują się: mikrokontroler STM107VCT oraz układ IP178CH (zarządzalny switch) który do komunikacji wykorzystuje interfesj RMII. W skład strony wchodzą: index.html (strona główna), error.html (pojawia się po wpisaniu błędnego adresu strony), leds.shtml (strona sterująca 3 ledami) oraz login.shtml (strona w której wpisanie poprawnego loginu i hasła powduje przekierowanie do leds.shtml) Idęą projektu jest zaprezentowanie działania serwera http, z którego mikroprocesor może zarówno pobierać dane (przez zastosowanie CGI), jak również aktualizować aktualizować treści na poszczególnych stronach (przy pomocy SSI). Strony internetowe napisane w htmlu znajdują się w folderze LWIP_v4\Middlewares\Third_Party\LwIP\src\apps\httpd\fs\
+The project includes a prototype of a website based on the lwip library. The PCB contains: the STM107VCT microcontroller and the IP178CH system (managed switch) which uses the RMII interface for communication. The website includes: index.html (home page), error.html (appears after entering the wrong website address), leds.shtml (page controlling 3 LEDs) and login.shtml (page where entering the correct login and password causes redirection to leds.shtml) This project present the capabilities of the lwip library which can both download data (using CGI) and update the content on individual pages (using SSI). Websites written in HTML are located in the Middlewares\Third_Party\LwIP\src\apps\httpd\fs\
 
-Ważne informacje:
-- W bibliotece lwipopts.h należy zmienić wartość makra #define HTTPD_USE_CUSTOM_FSDATA 0, katalog LWIP\Target.
+Tips:
+- Change the macro value in the lwipopts.h library #define HTTPD_USE_CUSTOM_FSDATA 0, (folder - LWIP\Target)
 
-- Przed zainicjowaniem rmii należy zresetować IP178CH poprzez podanie stanu niskiego na odpowiednie wyjście gpio w projekcie oznaczone jako RESET_IP.
+- Before initializing rmii, you must reset IP178CH by applying a low state to the appropriate GPIO output in the project marked as RESET_IP.
 
-- Procesor musi wystawić zegar na wyjściu MCO f=25MHz, bez tego switch nie zacznie działać.
+- The processor must set a clock at the MCO output of f=25MHz, otherwise the switch will not start working.
 
-- Do pliku fs.h (katalog Middlewares\Third_Party\LwIP\src\apps\httpd) należy dodać makro #define FS_FILE_FLAGS_SSI 0x08 (w starej bibliotece LWIP go nie ma).
+- The #define FS_FILE_FLAGS_SSI 0x08 macro should be added to the fs.h file Middlewares\Third_Party\LwIP\src\apps\httpd (it is not included in the old LWIP library).
 
-- Po dokonaniu zmian w pliakch .html i .shtml należy uruchomić program makeFSdata.exe (w folderze \Middlewares\Third_Party\LwIP\src\apps\httpd\) następnie przebudować projekt.
+- After making changes to the .html and .shtml files, run the makeFSdata.exe program (in the \Middlewares\Third_Party\LwIP\src\apps\httpd\ folder) and then rebuild the project.
 
-- Za halndlery ssi i cgi odpowiada biblioteka http_ssi .
+- SSI and CGI handlers can be found at http_ssi.c
