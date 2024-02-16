@@ -1,0 +1,15 @@
+main.c:80:6:HAL_ADC_ConvCpltCallback	4
+main.c:95:6:HAL_GPIO_EXTI_Callback	3
+main.c:115:5:main	3
+main.c:215:6:SystemClock_Config	3
+main.c:259:13:MX_ADC_Init	7
+main.c:350:13:MX_I2C2_Init	2
+main.c:384:13:MX_USART1_UART_Init	2
+main.c:415:13:MX_DMA_Init	1
+main.c:433:13:MX_GPIO_Init	1
+main.c:531:6:StartDefaultTask	2
+main.c:564:6:StartBtTask	1
+main.c:585:6:StartLraGyroTask	1
+main.c:613:6:StartSensorsTask	1
+main.c:634:6:HAL_TIM_PeriodElapsedCallback	2
+main.c:651:6:Error_Handler	1

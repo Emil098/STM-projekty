@@ -1,0 +1,2 @@
+C:/projekty/prywatne/STM-projekty/GUI_sensors_light/TouchGFX/generated/images/src/BitmapDatabase.cpp:207:37:const touchgfx::Bitmap::BitmapData* BitmapDatabase::getInstance()	0	static
+C:/projekty/prywatne/STM-projekty/GUI_sensors_light/TouchGFX/generated/images/src/BitmapDatabase.cpp:212:10:uint16_t BitmapDatabase::getInstanceSize()	0	static

@@ -1,0 +1,11 @@
+sens.c:29:7:map	1
+sens.c:33:13:floatToUintTab	1
+sens.c:42:13:transform_adc_to_weight	3
+sens.c:57:6:generate_colours	7
+sens.c:94:13:am_i_sitting	4
+sens.c:113:13:sensors_check	17
+sens.c:189:13:position_check	8
+sens.c:232:6:sens_handler	2
+sens.c:247:6:sens_reset_timestamp	1
+sens.c:249:6:sens_calibrate	4
+sens.c:265:6:check_are_calibrated_values_ok	4

@@ -1,0 +1,8 @@
+DefaultScreenPresenter.hpp:33:13:DefaultScreenPresenter::~DefaultScreenPresenter()	1
+DefaultScreenPresenter.cpp:21:6:virtual void DefaultScreenPresenter::deactivate()	1
+DefaultScreenPresenter.hpp:33:13:virtual DefaultScreenPresenter::~DefaultScreenPresenter()	1
+DefaultScreenPresenter.cpp:11:6:virtual void DefaultScreenPresenter::activate()	1
+DefaultScreenPresenter.cpp:29:6:virtual void DefaultScreenPresenter::getDefaultScreenData(color_settings_st*, enviroment_struct*)	1
+DefaultScreenPresenter.cpp:35:6:virtual void DefaultScreenPresenter::updateLightInfo(color_settings_st)	1
+DefaultScreenPresenter.hpp:33:13:virtual void* DefaultScreenPresenter::_ZThn4_N22DefaultScreenPresenterD1Ev()	1
+DefaultScreenPresenter.cpp:5:1:DefaultScreenPresenter::DefaultScreenPresenter(DefaultScreenView&)	1

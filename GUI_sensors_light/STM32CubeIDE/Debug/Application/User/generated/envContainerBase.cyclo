@@ -1,0 +1,49 @@
+Drawable.hpp:147:23:virtual touchgfx::Drawable* touchgfx::Drawable::getFirstChild()	1
+Drawable.hpp:315:18:virtual void touchgfx::Drawable::setX(int16_t)	1
+Drawable.hpp:327:18:virtual void touchgfx::Drawable::setY(int16_t)	1
+Drawable.hpp:356:18:virtual void touchgfx::Drawable::setWidth(int16_t)	1
+Drawable.hpp:368:18:virtual void touchgfx::Drawable::setHeight(int16_t)	1
+Drawable.hpp:378:18:virtual void touchgfx::Drawable::childGeometryChanged()	1
+Drawable.hpp:389:18:virtual void touchgfx::Drawable::handleClickEvent(const touchgfx::ClickEvent&)	1
+Drawable.hpp:401:18:virtual void touchgfx::Drawable::handleGestureEvent(const touchgfx::GestureEvent&)	1
+Drawable.hpp:490:18:virtual void touchgfx::Drawable::handleDragEvent(const touchgfx::DragEvent&)	1
+Drawable.hpp:501:18:virtual void touchgfx::Drawable::handleTickEvent()	1
+Drawable.hpp:588:18:virtual void touchgfx::Drawable::moveTo(int16_t, int16_t)	1
+Drawable.hpp:703:18:virtual void touchgfx::Drawable::setupDrawChain(const touchgfx::Rect&, touchgfx::Drawable**)	1
+Container.hpp:165:23:virtual touchgfx::Drawable* touchgfx::Container::getFirstChild()	1
+Widget.hpp:45:18:virtual void touchgfx::Widget::getLastChild(int16_t, int16_t, touchgfx::Drawable**)	3
+TypedText.hpp:65:13:touchgfx::TypedText::~TypedText()	1
+TextArea.hpp:48:18:virtual void touchgfx::TextArea::setWidth(int16_t)	1
+TextArea.hpp:54:18:virtual void touchgfx::TextArea::setHeight(int16_t)	1
+TextArea.hpp:60:18:virtual touchgfx::Rect touchgfx::TextArea::getSolidRect() const	1
+TextArea.hpp:89:18:virtual void touchgfx::TextArea::setAlpha(uint8_t)	1
+TextArea.hpp:127:18:virtual void touchgfx::TextArea::setXBaselineY(int16_t, int16_t)	1
+TextArea.hpp:403:41:virtual const UnicodeChar* touchgfx::TextArea::getWildcard2() const	1
+TextAreaWithWildcard.hpp:84:41:virtual const UnicodeChar* touchgfx::TextAreaWithOneWildcard::getWildcard1() const	1
+AbstractPainter.hpp:61:34:virtual touchgfx::HAL::RenderingMethod touchgfx::AbstractPainter::getRenderingMethod() const	1
+AbstractPainter.hpp:78:18:virtual bool touchgfx::AbstractPainter::setup(const touchgfx::Rect&) const	1
+AbstractPainter.hpp:90:18:virtual void touchgfx::AbstractPainter::tearDown() const	1
+AbstractPainterBitmap.hpp:53:13:touchgfx::AbstractPainterBitmap::~AbstractPainterBitmap()	1
+AbstractPainterBitmap.hpp:89:18:virtual void touchgfx::AbstractPainterBitmap::setTiled(bool)	1
+AbstractPainterBitmap.hpp:113:18:virtual void touchgfx::AbstractPainterBitmap::setOffset(int16_t, int16_t)	1
+envContainerBase.cpp:153:1:envContainerBase::~envContainerBase()	1
+envContainerBase.cpp:158:6:virtual void envContainerBase::initialize()	1
+TextAreaWithWildcard.hpp:62:7:touchgfx::TextAreaWithOneWildcard::~TextAreaWithOneWildcard()	1
+AbstractPainterBitmap.hpp:53:13:virtual touchgfx::AbstractPainterBitmap::~AbstractPainterBitmap()	1
+TypedText.hpp:65:13:virtual touchgfx::TypedText::~TypedText()	1
+TextAreaWithWildcard.hpp:62:7:virtual touchgfx::TextAreaWithOneWildcard::~TextAreaWithOneWildcard()	1
+envContainerBase.cpp:153:1:virtual envContainerBase::~envContainerBase()	1
+AbstractPainterBitmap.hpp:62:18:virtual void touchgfx::AbstractPainterBitmap::setBitmap(const touchgfx::Bitmap&)	1
+Drawable.hpp:121:18:virtual void touchgfx::Drawable::invalidateContent() const	2
+TextAreaWithWildcard.hpp:43:18:virtual void touchgfx::TextAreaWithWildcardBase::invalidateContent() const	1
+TextArea.hpp:111:18:virtual void touchgfx::TextArea::setBaselineY(int16_t)	1
+TextAreaWithWildcard.hpp:49:36:virtual touchgfx::TextArea::BoundingArea touchgfx::TextAreaWithWildcardBase::calculateBoundingArea() const	1
+Drawable.hpp:48:5:touchgfx::Drawable::Drawable()	1
+Drawable.hpp:343:10:void touchgfx::Drawable::setXY(int16_t, int16_t)	1
+Drawable.hpp:233:10:void touchgfx::Drawable::setPosition(int16_t, int16_t, int16_t, int16_t)	1
+TextArea.hpp:43:5:touchgfx::TextArea::TextArea()	1
+TextAreaWithWildcard.hpp:65:5:touchgfx::TextAreaWithOneWildcard::TextAreaWithOneWildcard()	1
+Image.hpp:50:5:touchgfx::Image::Image(const touchgfx::Bitmap&)	1
+AbstractPainterRGB565.hpp:41:5:touchgfx::AbstractPainterRGB565::AbstractPainterRGB565()	4
+PainterRGB565Bitmap.hpp:45:5:touchgfx::PainterRGB565Bitmap::PainterRGB565Bitmap(const touchgfx::Bitmap&)	1
+envContainerBase.cpp:9:1:envContainerBase::envContainerBase()	9

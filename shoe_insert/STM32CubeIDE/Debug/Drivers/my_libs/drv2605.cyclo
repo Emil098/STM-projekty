@@ -1,0 +1,15 @@
+drv2605.c:205:6:Haptic_DRV2605_Haptic_DRV2605	1
+drv2605.c:210:5:Haptic_DRV2605_readReg	3
+drv2605.c:225:5:Haptic_DRV2605_writeReg	2
+drv2605.c:236:5:Haptic_DRV2605_writeRegBits	1
+drv2605.c:244:5:Haptic_DRV2605_writeRegBulk	3
+drv2605.c:252:5:Haptic_DRV2605_writeRegScript	5
+drv2605.c:267:5:Haptic_DRV2605_getDeviceID	2
+drv2605.c:278:6:Haptic_DRV2605_inited	1
+drv2605.c:287:5:Haptic_DRV2605_begin	2
+drv2605.c:328:5:Haptic_DRV2605_setActuatorType	6
+drv2605.c:356:5:Haptic_DRV2605_setWaveform	3
+drv2605.c:370:5:Haptic_DRV2605_playScript	3
+drv2605.c:381:5:Haptic_DRV2605_go	1
+drv2605.c:388:5:Haptic_DRV2605_goWait	2
+drv2605.c:401:5:Haptic_DRV2605_setMode	9

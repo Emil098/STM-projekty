@@ -1,0 +1,6 @@
+../private_libs/gui_handle.c:14:6:set_pwm_color	8	static
+../private_libs/gui_handle.c:23:6:set_brightness	8	static
+../private_libs/gui_handle.c:55:6:set_led_status	8	static
+../private_libs/gui_handle.c:67:6:update_env_struct	8	static
+../private_libs/gui_handle.c:73:6:get_light_struct	0	static
+../private_libs/gui_handle.c:76:6:get_env_struct	8	static

@@ -1,0 +1,8 @@
+../../TouchGFX/gui/include/gui/defaultscreen_screen/DefaultScreenPresenter.hpp:33:13:DefaultScreenPresenter::~DefaultScreenPresenter()	0	static
+C:/projekty/prywatne/STM-projekty/GUI_sensors_light/TouchGFX/gui/src/defaultscreen_screen/DefaultScreenPresenter.cpp:21:6:virtual void DefaultScreenPresenter::deactivate()	0	static
+../../TouchGFX/gui/include/gui/defaultscreen_screen/DefaultScreenPresenter.hpp:33:13:virtual DefaultScreenPresenter::~DefaultScreenPresenter()	8	static
+C:/projekty/prywatne/STM-projekty/GUI_sensors_light/TouchGFX/gui/src/defaultscreen_screen/DefaultScreenPresenter.cpp:11:6:virtual void DefaultScreenPresenter::activate()	24	static
+C:/projekty/prywatne/STM-projekty/GUI_sensors_light/TouchGFX/gui/src/defaultscreen_screen/DefaultScreenPresenter.cpp:29:6:virtual void DefaultScreenPresenter::getDefaultScreenData(color_settings_st*, enviroment_struct*)	0	static
+C:/projekty/prywatne/STM-projekty/GUI_sensors_light/TouchGFX/gui/src/defaultscreen_screen/DefaultScreenPresenter.cpp:35:6:virtual void DefaultScreenPresenter::updateLightInfo(color_settings_st)	8	static
+../../TouchGFX/gui/include/gui/defaultscreen_screen/DefaultScreenPresenter.hpp:33:13:virtual void* DefaultScreenPresenter::_ZThn4_N22DefaultScreenPresenterD1Ev()	0	static
+C:/projekty/prywatne/STM-projekty/GUI_sensors_light/TouchGFX/gui/src/defaultscreen_screen/DefaultScreenPresenter.cpp:5:1:DefaultScreenPresenter::DefaultScreenPresenter(DefaultScreenView&)	8	static

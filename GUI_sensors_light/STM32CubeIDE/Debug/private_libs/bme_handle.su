@@ -1,0 +1,2 @@
+../private_libs/bme_handle.c:33:6:bme_init	16	static
+../private_libs/bme_handle.c:85:6:bme_handle	120	static

@@ -1,0 +1,6 @@
+../Drivers/my_libs/hm10.c:40:6:HM10_io_init	4	static
+../Drivers/my_libs/hm10.c:56:6:HM10_io_deinit	4	static
+../Drivers/my_libs/hm10.c:69:6:HM10_io_cmd_irq_handler	24	static
+../Drivers/my_libs/hm10.c:110:6:HM10_io_cmd_getc	24	static
+../Drivers/my_libs/hm10.c:126:6:HM10_io_cmd_putc	24	static
+../Drivers/my_libs/hm10.c:146:6:HM10_io_cmd_clear_rx_buf	4	static

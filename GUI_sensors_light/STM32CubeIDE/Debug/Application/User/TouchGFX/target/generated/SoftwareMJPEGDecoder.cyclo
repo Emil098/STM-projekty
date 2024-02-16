@@ -1,0 +1,23 @@
+SoftwareMJPEGDecoder.hpp:44:22:virtual uint32_t SoftwareMJPEGDecoder::getCurrentFrameNumber() const	1
+SoftwareMJPEGDecoder.hpp:52:23:virtual MJPEGDecoder::AVIErrors SoftwareMJPEGDecoder::getLastError()	1
+SoftwareMJPEGDecoder.cpp:226:6:virtual bool SoftwareMJPEGDecoder::hasVideo()	2
+SoftwareMJPEGDecoder.cpp:551:10:virtual uint32_t SoftwareMJPEGDecoder::getNumberOfFrames()	1
+SoftwareMJPEGDecoder.cpp:556:6:virtual void SoftwareMJPEGDecoder::getVideoInfo(touchgfx::VideoInformation*)	1
+SoftwareMJPEGDecoder.hpp:23:7:SoftwareMJPEGDecoder::~SoftwareMJPEGDecoder()	1
+SoftwareMJPEGDecoder.cpp:525:6:virtual bool SoftwareMJPEGDecoder::decodeThumbnail(uint32_t, uint8_t*, uint16_t, uint16_t)	0
+SoftwareMJPEGDecoder.hpp:23:7:virtual SoftwareMJPEGDecoder::~SoftwareMJPEGDecoder()	1
+SoftwareMJPEGDecoder.cpp:334:6:0(const uint8_t*, uint32_t, uint8_t*, uint16_t, uint16_t, uint32_t)	4
+SoftwareMJPEGDecoder.cpp:41:1:SoftwareMJPEGDecoder::SoftwareMJPEGDecoder(uint8_t*)	1
+SoftwareMJPEGDecoder.cpp:52:5:int SoftwareMJPEGDecoder::compare(uint32_t, const char*, uint32_t)	2
+SoftwareMJPEGDecoder.cpp:67:17:uint32_t SoftwareMJPEGDecoder::getU32(uint32_t)	2
+SoftwareMJPEGDecoder.cpp:82:17:uint32_t SoftwareMJPEGDecoder::getU16(uint32_t)	2
+SoftwareMJPEGDecoder.cpp:97:16:const uint8_t* SoftwareMJPEGDecoder::readData(uint32_t, uint32_t)	3
+SoftwareMJPEGDecoder.cpp:171:6:virtual bool SoftwareMJPEGDecoder::gotoNextFrame()	5
+SoftwareMJPEGDecoder.cpp:419:6:virtual bool SoftwareMJPEGDecoder::decodeFrame(const touchgfx::Rect&, uint8_t*, uint32_t)	4
+SoftwareMJPEGDecoder.cpp:531:6:virtual void SoftwareMJPEGDecoder::gotoFrame(uint32_t)	2
+SoftwareMJPEGDecoder.cpp:231:6:void SoftwareMJPEGDecoder::readVideoHeader()	9
+SoftwareMJPEGDecoder.cpp:208:6:virtual void SoftwareMJPEGDecoder::setVideoData(const uint8_t*, uint32_t)	1
+SoftwareMJPEGDecoder.cpp:217:6:virtual void SoftwareMJPEGDecoder::setVideoData(touchgfx::VideoDataReader&)	1
+SoftwareMJPEGDecoder.cpp:334:6:void SoftwareMJPEGDecoder::decodeMJPEGFrame(const uint8_t*, uint32_t, uint8_t*, uint16_t, uint16_t, uint32_t)	3
+SoftwareMJPEGDecoder.cpp:120:6:virtual bool SoftwareMJPEGDecoder::decodeNextFrame(uint8_t*, uint16_t, uint16_t, uint32_t)	7
+SoftwareMJPEGDecoder.cpp:570:8:size_t jpeg_read_file(FILE*, uint8_t*, uint32_t)	0

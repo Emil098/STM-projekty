@@ -1,0 +1,10 @@
+Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	1
+Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	1
+DefaultScreenView.cpp:16:6:virtual void DefaultScreenView::tearDownScreen()	1
+DefaultScreenView.hpp:22:13:DefaultScreenView::~DefaultScreenView()	1
+DefaultScreenView.hpp:22:13:virtual DefaultScreenView::~DefaultScreenView()	1
+DefaultScreenView.cpp:6:1:DefaultScreenView::DefaultScreenView()	1
+DefaultScreenView.cpp:11:6:virtual void DefaultScreenView::setupScreen()	1
+DefaultScreenView.cpp:21:6:virtual void DefaultScreenView::ScreenRoutine()	5
+DefaultScreenView.cpp:61:6:virtual void DefaultScreenView::LightWidgetUpdate()	1
+DefaultScreenView.cpp:70:6:virtual void DefaultScreenView::initLightPage(color_settings_st)	1

@@ -1,0 +1,8 @@
+../../TouchGFX/gui/include/gui/lightscreen_screen/LightScreenPresenter.hpp:28:13:LightScreenPresenter::~LightScreenPresenter()	0	static
+C:/projekty/prywatne/STM-projekty/GUI_sensors_light/TouchGFX/gui/src/lightscreen_screen/LightScreenPresenter.cpp:16:6:virtual void LightScreenPresenter::deactivate()	0	static
+../../TouchGFX/gui/include/gui/lightscreen_screen/LightScreenPresenter.hpp:28:13:virtual LightScreenPresenter::~LightScreenPresenter()	8	static
+C:/projekty/prywatne/STM-projekty/GUI_sensors_light/TouchGFX/gui/src/lightscreen_screen/LightScreenPresenter.cpp:10:6:virtual void LightScreenPresenter::activate()	16	static
+C:/projekty/prywatne/STM-projekty/GUI_sensors_light/TouchGFX/gui/src/lightscreen_screen/LightScreenPresenter.cpp:21:6:virtual void LightScreenPresenter::updateDefaultColor(long unsigned int)	0	static
+C:/projekty/prywatne/STM-projekty/GUI_sensors_light/TouchGFX/gui/src/lightscreen_screen/LightScreenPresenter.cpp:27:6:virtual void LightScreenPresenter::updateColor(long unsigned int)	0	static
+../../TouchGFX/gui/include/gui/lightscreen_screen/LightScreenPresenter.hpp:28:13:virtual void* LightScreenPresenter::_ZThn4_N20LightScreenPresenterD1Ev()	0	static
+C:/projekty/prywatne/STM-projekty/GUI_sensors_light/TouchGFX/gui/src/lightscreen_screen/LightScreenPresenter.cpp:4:1:LightScreenPresenter::LightScreenPresenter(LightScreenView&)	8	static

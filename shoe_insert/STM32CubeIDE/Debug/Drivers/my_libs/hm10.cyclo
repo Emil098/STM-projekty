@@ -1,0 +1,6 @@
+hm10.c:40:6:HM10_io_init	1
+hm10.c:56:6:HM10_io_deinit	1
+hm10.c:69:6:HM10_io_cmd_irq_handler	7
+hm10.c:110:6:HM10_io_cmd_getc	2
+hm10.c:126:6:HM10_io_cmd_putc	4
+hm10.c:146:6:HM10_io_cmd_clear_rx_buf	1

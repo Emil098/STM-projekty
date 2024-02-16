@@ -1,0 +1,43 @@
+Drawable.hpp:147:23:virtual touchgfx::Drawable* touchgfx::Drawable::getFirstChild()	1
+Drawable.hpp:315:18:virtual void touchgfx::Drawable::setX(int16_t)	1
+Drawable.hpp:327:18:virtual void touchgfx::Drawable::setY(int16_t)	1
+Drawable.hpp:356:18:virtual void touchgfx::Drawable::setWidth(int16_t)	1
+Drawable.hpp:368:18:virtual void touchgfx::Drawable::setHeight(int16_t)	1
+Drawable.hpp:378:18:virtual void touchgfx::Drawable::childGeometryChanged()	1
+Drawable.hpp:389:18:virtual void touchgfx::Drawable::handleClickEvent(const touchgfx::ClickEvent&)	1
+Drawable.hpp:401:18:virtual void touchgfx::Drawable::handleGestureEvent(const touchgfx::GestureEvent&)	1
+Drawable.hpp:490:18:virtual void touchgfx::Drawable::handleDragEvent(const touchgfx::DragEvent&)	1
+Drawable.hpp:501:18:virtual void touchgfx::Drawable::handleTickEvent()	1
+Drawable.hpp:588:18:virtual void touchgfx::Drawable::moveTo(int16_t, int16_t)	1
+Drawable.hpp:703:18:virtual void touchgfx::Drawable::setupDrawChain(const touchgfx::Rect&, touchgfx::Drawable**)	1
+Container.hpp:165:23:virtual touchgfx::Drawable* touchgfx::Container::getFirstChild()	1
+Widget.hpp:45:18:virtual void touchgfx::Widget::getLastChild(int16_t, int16_t, touchgfx::Drawable**)	3
+ColorContainerBase.cpp:121:1:ColorContainerBase::~ColorContainerBase()	1
+ColorContainerBase.cpp:126:6:virtual void ColorContainerBase::initialize()	1
+ColorContainerBase.cpp:131:6:void ColorContainerBase::radioButtonSelectedCallbackHandler(const touchgfx::AbstractButton&)	16
+ColorContainerBase.cpp:240:6:virtual void ColorContainerBase::ColorSelected(uint32_t)	1
+Callback.hpp:357:8:touchgfx::Callback<touchgfx::RadioButtonGroup<15>, const touchgfx::AbstractButton&, void, void>::~Callback()	1
+RadioButtonGroup.hpp:53:13:touchgfx::RadioButtonGroup<CAPACITY>::~RadioButtonGroup() [with short unsigned int CAPACITY = 15]	1
+Callback.hpp:357:8:touchgfx::Callback<ColorContainerBase, const touchgfx::AbstractButton&>::~Callback()	1
+Callback.hpp:386:18:void touchgfx::Callback<dest_type, T1, void, void>::execute(T1) [with dest_type = ColorContainerBase; T1 = const touchgfx::AbstractButton&]	2
+Callback.hpp:396:18:bool touchgfx::Callback<dest_type, T1, void, void>::isValid() const [with dest_type = ColorContainerBase; T1 = const touchgfx::AbstractButton&]	3
+RadioButtonGroup.hpp:78:26:touchgfx::RadioButton* touchgfx::RadioButtonGroup<CAPACITY>::getRadioButton(uint16_t) const [with short unsigned int CAPACITY = 15]	2
+RadioButtonGroup.hpp:89:21:int32_t touchgfx::RadioButtonGroup<CAPACITY>::getSelectedRadioButtonIndex() const [with short unsigned int CAPACITY = 15]	3
+RadioButtonGroup.hpp:107:26:touchgfx::RadioButton* touchgfx::RadioButtonGroup<CAPACITY>::getSelectedRadioButton() const [with short unsigned int CAPACITY = 15]	2
+RadioButtonGroup.hpp:138:18:void touchgfx::RadioButtonGroup<CAPACITY>::setDeselectionEnabled(bool) [with short unsigned int CAPACITY = 15]	2
+Callback.hpp:386:18:void touchgfx::Callback<dest_type, T1, void, void>::execute(T1) [with dest_type = touchgfx::RadioButtonGroup<15>; T1 = const touchgfx::AbstractButton&]	2
+Callback.hpp:396:18:bool touchgfx::Callback<dest_type, T1, void, void>::isValid() const [with dest_type = touchgfx::RadioButtonGroup<15>; T1 = const touchgfx::AbstractButton&]	3
+RadioButtonGroup.hpp:122:18:void touchgfx::RadioButtonGroup<CAPACITY>::setSelected(touchgfx::RadioButton&) [with short unsigned int CAPACITY = 15]	1
+RadioButtonGroup.hpp:53:13:touchgfx::RadioButtonGroup<CAPACITY>::~RadioButtonGroup() [with short unsigned int CAPACITY = 15]	1
+Callback.hpp:357:8:virtual touchgfx::Callback<touchgfx::RadioButtonGroup<15>, const touchgfx::AbstractButton&, void, void>::~Callback()	1
+Callback.hpp:357:8:virtual touchgfx::Callback<ColorContainerBase, const touchgfx::AbstractButton&>::~Callback()	1
+ColorContainerBase.cpp:121:1:virtual ColorContainerBase::~ColorContainerBase()	1
+Drawable.hpp:121:18:virtual void touchgfx::Drawable::invalidateContent() const	2
+ColorContainerBase.hpp:40:18:virtual void ColorContainerBase::emitColorSelected1Callback(uint32_t)	3
+RadioButtonGroup.hpp:227:18:void touchgfx::RadioButtonGroup<CAPACITY>::radioButtonDeselectedHandler(const touchgfx::AbstractButton&) [with short unsigned int CAPACITY = 15]	3
+RadioButtonGroup.hpp:63:18:void touchgfx::RadioButtonGroup<CAPACITY>::add(touchgfx::RadioButton&) [with short unsigned int CAPACITY = 15]	1
+RadioButtonGroup.hpp:153:18:bool touchgfx::RadioButtonGroup<CAPACITY>::getDeselectionEnabled() const [with short unsigned int CAPACITY = 15]	2
+RadioButtonGroup.hpp:202:18:void touchgfx::RadioButtonGroup<CAPACITY>::radioButtonClickedHandler(const touchgfx::AbstractButton&) [with short unsigned int CAPACITY = 15]	6
+Drawable.hpp:343:10:void touchgfx::Drawable::setXY(int16_t, int16_t)	1
+RadioButton.hpp:41:5:touchgfx::RadioButton::RadioButton()	1
+ColorContainerBase.cpp:7:1:ColorContainerBase::ColorContainerBase()	1

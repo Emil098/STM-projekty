@@ -1,0 +1,1249 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Name": "DefaultScreen",
+        "CanvasBufferSize": 7200,
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "Width": 480,
+            "Height": 272,
+            "LockPosition": true,
+            "RelativeFilename": "bg.png"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "scalableImage1",
+            "X": 20,
+            "Y": 4,
+            "Width": 441,
+            "Height": 34,
+            "LockPosition": true,
+            "Filename": "Rectangle_21.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Title_text",
+            "Y": 8,
+            "Width": 480,
+            "Height": 30,
+            "LockPosition": true,
+            "TextId": "__SingleUse_PJIO",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_CWEH",
+              "UseBuffer": true,
+              "BufferSize": 30
+            }
+          },
+          {
+            "Type": "SwipeContainer",
+            "Name": "swipeContainer1",
+            "Y": 41,
+            "Width": 480,
+            "Height": 225,
+            "SwipeCutoff": 50,
+            "ShowPageIndicator": true,
+            "PageIndicatorX": 220,
+            "PageIndicatorY": 200,
+            "IndicatorImageNormal": "__generated\\alternate_theme_images_widgets_swipecontainer_medium_off_normal.png",
+            "IndicatorImageHighlight": "__generated\\alternate_theme_images_widgets_swipecontainer_medium_on_active.png",
+            "EndSwipeElasticWidth": 50,
+            "SelectedPage": "swipeContainer1PageEnv",
+            "Preset": "alternate_theme\\presets\\swipecontainer\\medium_active.json",
+            "Components": [
+              {
+                "Type": "Container",
+                "Name": "swipeContainer1PageEnv",
+                "Width": 480,
+                "Height": 225,
+                "Components": [
+                  {
+                    "Type": "CustomContainerInstance",
+                    "Name": "envContainer1",
+                    "X": 28,
+                    "Width": 424,
+                    "Height": 207,
+                    "CustomContainerDefinitionName": "envContainer"
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "swipeContainer1PageLight",
+                "Width": 480,
+                "Height": 225,
+                "Components": [
+                  {
+                    "Type": "CustomContainerInstance",
+                    "Name": "lightContainer1",
+                    "Y": 4,
+                    "Width": 480,
+                    "Height": 240,
+                    "CustomContainerDefinitionName": "LightContainer"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "ScreenRoutineInteraction",
+            "Trigger": {
+              "Type": "TriggerOnEveryTick",
+              "TickCount": 1
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "ScreenRoutine"
+            }
+          },
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "LightContainer widgetChanged happens",
+              "TriggerComponent": "lightContainer1"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "LightWidgetUpdate"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "LightScreen",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "Width": 480,
+            "Height": 272,
+            "LockPosition": true,
+            "RelativeFilename": "bg.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "SliderBgBlue",
+            "Y": 221,
+            "Width": 320,
+            "Height": 40,
+            "RelativeFilename": "SliderBgBlue.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "SliderBgGreen",
+            "Y": 172,
+            "Width": 320,
+            "Height": 40,
+            "RelativeFilename": "SliderBgGreen.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "SliderBgRed",
+            "Y": 123,
+            "Width": 320,
+            "Height": 40,
+            "RelativeFilename": "SliderBgRed.png"
+          },
+          {
+            "Type": "Slider",
+            "Name": "sliderBlue",
+            "X": 34,
+            "Y": 212,
+            "Width": 251,
+            "Height": 45,
+            "IsHorizontalSlider": true,
+            "BackgroundUnselected": "SliderBg.png",
+            "BackgroundSelected": "SliderActiveBlue.png",
+            "Indicator": "SliderIndicator.png",
+            "BackgroundY": 22,
+            "IndicatorPos": 15,
+            "IndicatorMax": 221,
+            "ValueMax": 255
+          },
+          {
+            "Type": "Slider",
+            "Name": "sliderGreen",
+            "X": 34,
+            "Y": 163,
+            "Width": 251,
+            "Height": 45,
+            "IsHorizontalSlider": true,
+            "BackgroundUnselected": "SliderBg.png",
+            "BackgroundSelected": "SliderActiveGreen.png",
+            "Indicator": "SliderIndicator.png",
+            "BackgroundY": 22,
+            "IndicatorPos": 15,
+            "IndicatorMax": 221,
+            "ValueMax": 255
+          },
+          {
+            "Type": "Slider",
+            "Name": "sliderRed",
+            "X": 34,
+            "Y": 114,
+            "Width": 251,
+            "Height": 45,
+            "IsHorizontalSlider": true,
+            "BackgroundUnselected": "SliderBg.png",
+            "BackgroundSelected": "SliderActiveRed.png",
+            "Indicator": "SliderIndicator.png",
+            "BackgroundY": 22,
+            "IndicatorPos": 15,
+            "IndicatorMax": 221,
+            "ValueMax": 255
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "colorContainer1",
+            "X": 330,
+            "Y": 11,
+            "Width": 150,
+            "Height": 250,
+            "CustomContainerDefinitionName": "ColorContainer"
+          },
+          {
+            "Type": "Button",
+            "Name": "exitBtn",
+            "Y": 1,
+            "Width": 45,
+            "Height": 60,
+            "LockPosition": true,
+            "Pressed": "backPres.png",
+            "Released": "backRel.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaColorNameLabel",
+            "X": 52,
+            "Y": 21,
+            "Width": 85,
+            "Height": 20,
+            "TextId": "__SingleUse_XJOZ",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 94,
+              "Green": 99,
+              "Blue": 121
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaColorName",
+            "X": 137,
+            "Y": 13,
+            "Width": 193,
+            "Height": 37,
+            "TextId": "__SingleUse_EFJ3",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 51,
+              "Green": 194,
+              "Blue": 161
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_TKDZ",
+              "UseBuffer": true,
+              "BufferSize": 20
+            }
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "UpdateDefaultColBtn",
+            "X": 7,
+            "Y": 65,
+            "Width": 174,
+            "Height": 50,
+            "Pressed": "spacePre.png",
+            "Released": "spaceRel.png",
+            "TextId": "__SingleUse_13DG",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 51,
+              "Green": 194,
+              "Blue": 161
+            },
+            "TextRotation": "0"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "ColorSelectedInteraction",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "ColorContainer ColorSelected1 happens",
+              "TriggerComponent": "colorContainer1"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "NewColorSelected"
+            }
+          },
+          {
+            "InteractionName": "ExitInteraction",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "exitBtn"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "North",
+              "ActionComponent": "DefaultScreen"
+            }
+          },
+          {
+            "InteractionName": "sliderBlueInteraction",
+            "Trigger": {
+              "Type": "TriggerSliderValueChanged",
+              "TriggerComponent": "sliderBlue"
+            },
+            "Action": {
+              "Type": "ActionCustom2",
+              "ActionCustomTypeName": "Call LightScreen sliderChaged",
+              "ParameterValue": "value",
+              "ActionComponent": "LightScreen"
+            }
+          },
+          {
+            "InteractionName": "sliderGreenInteraction",
+            "Trigger": {
+              "Type": "TriggerSliderValueChanged",
+              "TriggerComponent": "sliderGreen"
+            },
+            "Action": {
+              "Type": "ActionCustom2",
+              "ActionCustomTypeName": "Call LightScreen sliderChaged",
+              "ParameterValue": "value",
+              "ActionComponent": "LightScreen"
+            }
+          },
+          {
+            "InteractionName": "sliderRedInteraction",
+            "Trigger": {
+              "Type": "TriggerSliderValueChanged",
+              "TriggerComponent": "sliderRed"
+            },
+            "Action": {
+              "Type": "ActionCustom2",
+              "ActionCustomTypeName": "Call LightScreen sliderChaged",
+              "ParameterValue": "value",
+              "ActionComponent": "LightScreen"
+            }
+          },
+          {
+            "InteractionName": "updateDefaultColorInteraction",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "UpdateDefaultColBtn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "updateDefaultColor"
+            }
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "sliderChaged",
+            "HasValue": true,
+            "ValueType": "uint8_t"
+          }
+        ]
+      }
+    ],
+    "CustomContainerDefinitions": [
+      {
+        "Name": "envContainer",
+        "Width": 424,
+        "Height": 207,
+        "Components": [
+          {
+            "Type": "TextArea",
+            "Name": "textAreaTemp",
+            "X": 60,
+            "Y": 134,
+            "Width": 90,
+            "Height": 33,
+            "TextId": "__SingleUse_01JT",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 51,
+              "Green": 194,
+              "Blue": 161
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_4H7O",
+              "UseBuffer": true,
+              "BufferSize": 5
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "PresLabel",
+            "X": 287,
+            "Y": 106,
+            "Width": 77,
+            "Height": 23,
+            "TextId": "__SingleUse_AMY7",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 94,
+              "Green": 99,
+              "Blue": 121
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "PresUnitLabel",
+            "X": 314,
+            "Y": 173,
+            "Width": 22,
+            "Height": 18,
+            "TextId": "__SingleUse_U954",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "HumLabel",
+            "X": 177,
+            "Y": 106,
+            "Width": 77,
+            "Height": 23,
+            "TextId": "__SingleUse_GEFT",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 94,
+              "Green": 99,
+              "Blue": 121
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "HumUnitLabel",
+            "X": 209,
+            "Y": 173,
+            "Width": 12,
+            "Height": 18,
+            "TextId": "__SingleUse_Y757",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "TempLabel",
+            "X": 55,
+            "Y": 106,
+            "Width": 101,
+            "Height": 23,
+            "TextId": "__SingleUse_H7XF",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 94,
+              "Green": 99,
+              "Blue": 121
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "TempUnitLabel",
+            "X": 97,
+            "Y": 173,
+            "Width": 16,
+            "Height": 18,
+            "TextId": "__SingleUse_X271",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "PreassureImage",
+            "X": 288,
+            "Y": 29,
+            "Width": 76,
+            "Height": 76,
+            "Filename": "preassureImg.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "Image",
+            "Name": "HumImage",
+            "X": 175,
+            "Y": 19,
+            "Width": 80,
+            "Height": 80,
+            "RelativeFilename": "humImg.png"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "scalableImage1",
+            "X": 73,
+            "Y": 26,
+            "Width": 70,
+            "Height": 70,
+            "Filename": "tempImg.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "CircleProgress",
+            "Name": "circleProgressTemp",
+            "X": 60,
+            "Y": 16,
+            "Width": 90,
+            "Height": 90,
+            "FileNameProgress": "barwy.png",
+            "Color": {
+              "Green": 240,
+              "Blue": 255
+            },
+            "CenterX": 45.0,
+            "CenterY": 45.0,
+            "Radius": 39.1,
+            "LineWidth": 10.3,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt",
+            "FileNameBackground": "wheelBar.png",
+            "ProgressRangeMax": 100,
+            "ProgressInitialValue": 95
+          },
+          {
+            "Type": "CircleProgress",
+            "Name": "circleProgressHum",
+            "X": 170,
+            "Y": 15,
+            "Width": 90,
+            "Height": 90,
+            "FileNameProgress": "barwy.png",
+            "Color": {
+              "Green": 240,
+              "Blue": 255
+            },
+            "CenterX": 45.0,
+            "CenterY": 45.0,
+            "Radius": 39.1,
+            "LineWidth": 10.3,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt",
+            "FileNameBackground": "wheelBar.png",
+            "ProgressRangeMax": 100,
+            "ProgressInitialValue": 17
+          },
+          {
+            "Type": "CircleProgress",
+            "Name": "circleProgressPreas",
+            "X": 280,
+            "Y": 16,
+            "Width": 90,
+            "Height": 90,
+            "FileNameProgress": "barwy.png",
+            "Color": {
+              "Green": 240,
+              "Blue": 255
+            },
+            "CenterX": 45.0,
+            "CenterY": 45.0,
+            "Radius": 39.1,
+            "LineWidth": 10.3,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt",
+            "FileNameBackground": "wheelBar.png",
+            "ProgressRangeMax": 100,
+            "ProgressInitialValue": 74
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaHum",
+            "X": 170,
+            "Y": 134,
+            "Width": 90,
+            "Height": 33,
+            "TextId": "__SingleUse_B52E",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 51,
+              "Green": 194,
+              "Blue": 161
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_1QU4",
+              "UseBuffer": true,
+              "BufferSize": 5
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaPreas",
+            "X": 280,
+            "Y": 134,
+            "Width": 90,
+            "Height": 33,
+            "TextId": "__SingleUse_NPYP",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 51,
+              "Green": 194,
+              "Blue": 161
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_SEHT",
+              "UseBuffer": true,
+              "BufferSize": 7
+            }
+          },
+          {
+            "Type": "Image",
+            "Name": "alertBgImage",
+            "Width": 480,
+            "Height": 272,
+            "Visible": false,
+            "LockPosition": true,
+            "RelativeFilename": "bg.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaAlert1",
+            "Y": 26,
+            "Width": 424,
+            "Height": 24,
+            "Visible": false,
+            "TextId": "__SingleUse_DEI3",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 94,
+              "Green": 99,
+              "Blue": 121
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_R6V0",
+              "UseBuffer": true,
+              "BufferSize": 45
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaAlert2",
+            "Y": 50,
+            "Width": 424,
+            "Height": 24,
+            "Visible": false,
+            "TextId": "__SingleUse_1YWU",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 94,
+              "Green": 99,
+              "Blue": 121
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_7NR0",
+              "UseBuffer": true,
+              "BufferSize": 45
+            }
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "LightContainer",
+        "Width": 480,
+        "Height": 240,
+        "Components": [
+          {
+            "Type": "ToggleButton",
+            "Name": "LedOnOffBtn",
+            "X": 340,
+            "Y": 10,
+            "Width": 121,
+            "Height": 40,
+            "Pressed": "Group_428.png",
+            "Released": "Group_429.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "X": 20,
+            "Y": 10,
+            "Width": 320,
+            "Height": 40,
+            "RelativeFilename": "SliderBgNew.png"
+          },
+          {
+            "Type": "Slider",
+            "Name": "sliderBrightness",
+            "X": 54,
+            "Y": 1,
+            "Width": 251,
+            "Height": 45,
+            "IsHorizontalSlider": true,
+            "BackgroundUnselected": "SliderBg.png",
+            "BackgroundSelected": "SliderActive.png",
+            "Indicator": "SliderIndicator.png",
+            "BackgroundY": 22,
+            "IndicatorPos": 15,
+            "IndicatorMax": 221,
+            "ValueMax": 255
+          },
+          {
+            "Type": "Button",
+            "Name": "button1",
+            "X": 200,
+            "Y": 56,
+            "Width": 80,
+            "Height": 80,
+            "Pressed": "SettingsPres.png",
+            "Released": "SettingsRel.png"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "ONOFFInteraction",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "LedOnOffBtn"
+            },
+            "Action": {
+              "Type": "ActionEmit",
+              "TriggerCustomTypeName": "LightContainer widgetChanged happens"
+            }
+          },
+          {
+            "InteractionName": "BrightnessInteraction",
+            "Trigger": {
+              "Type": "TriggerSliderValueChanged",
+              "TriggerComponent": "sliderBrightness"
+            },
+            "Action": {
+              "Type": "ActionEmit",
+              "TriggerCustomTypeName": "LightContainer widgetChanged happens"
+            }
+          },
+          {
+            "InteractionName": "ChangeScreenInteraction",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button1"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "South",
+              "ActionComponent": "LightScreen"
+            }
+          }
+        ],
+        "CustomTriggers": [
+          {
+            "Name": "widgetChanged"
+          }
+        ]
+      },
+      {
+        "Name": "ColorContainer",
+        "Width": 150,
+        "Height": 250,
+        "Components": [
+          {
+            "Type": "RadioButton",
+            "Name": "radioGreen",
+            "X": 100,
+            "Width": 50,
+            "Height": 50,
+            "FileNameSelected": "greenSelRel.png",
+            "FileNameSelectedPressed": "greenSelPre.png",
+            "FileNameUnselected": "greenRelRel.png",
+            "FileNameUnselectedPressed": "greenRelPre.png",
+            "RadioButtonGroup": "radioButtonColors"
+          },
+          {
+            "Type": "RadioButton",
+            "Name": "radioDeepBlueSky",
+            "X": 100,
+            "Y": 50,
+            "Width": 50,
+            "Height": 50,
+            "FileNameSelected": "DeepSkyBlueSelRel.png",
+            "FileNameSelectedPressed": "DeepSkyBlueSelPre.png",
+            "FileNameUnselected": "DeepSkyBlueRelRel.png",
+            "FileNameUnselectedPressed": "DeepSkyBlueRelPre.png",
+            "RadioButtonGroup": "radioButtonColors"
+          },
+          {
+            "Type": "RadioButton",
+            "Name": "radioSpringGreen",
+            "X": 100,
+            "Y": 100,
+            "Width": 50,
+            "Height": 50,
+            "FileNameSelected": "SpringGreenSelRel.png",
+            "FileNameSelectedPressed": "SpringGreenSelPre.png",
+            "FileNameUnselected": "SpringGreenRelRel.png",
+            "FileNameUnselectedPressed": "SpringGreenRelPre.png",
+            "RadioButtonGroup": "radioButtonColors"
+          },
+          {
+            "Type": "RadioButton",
+            "Name": "radioLawnGreen",
+            "X": 100,
+            "Y": 150,
+            "Width": 50,
+            "Height": 50,
+            "FileNameSelected": "LawnGreenSelRel.png",
+            "FileNameSelectedPressed": "LawnGreenSelPre.png",
+            "FileNameUnselected": "LawnGreenRelRel.png",
+            "FileNameUnselectedPressed": "LawnGreenRelPre.png",
+            "RadioButtonGroup": "radioButtonColors"
+          },
+          {
+            "Type": "RadioButton",
+            "Name": "radioYellow",
+            "X": 100,
+            "Y": 200,
+            "Width": 50,
+            "Height": 50,
+            "FileNameSelected": "YellowSelRel.png",
+            "FileNameSelectedPressed": "YellowSelPre.png",
+            "FileNameUnselected": "YellowRelRel.png",
+            "FileNameUnselectedPressed": "YellowRelPre.png",
+            "RadioButtonGroup": "radioButtonColors"
+          },
+          {
+            "Type": "RadioButton",
+            "Name": "radioBlue",
+            "X": 50,
+            "Width": 50,
+            "Height": 50,
+            "FileNameSelected": "BlueSelRel.png",
+            "FileNameSelectedPressed": "BlueSelPre.png",
+            "FileNameUnselected": "BlueRelRel.png",
+            "FileNameUnselectedPressed": "BlueRelPre.png",
+            "RadioButtonGroup": "radioButtonColors"
+          },
+          {
+            "Type": "RadioButton",
+            "Name": "radioDodgerBlue",
+            "X": 50,
+            "Y": 50,
+            "Width": 50,
+            "Height": 50,
+            "FileNameSelected": "dodgerBlueSelRel.png",
+            "FileNameSelectedPressed": "dodgerBlueSelPre.png",
+            "FileNameUnselected": "dodgerBlueRelRel.png",
+            "FileNameUnselectedPressed": "dodgerBlueRelPre.png",
+            "RadioButtonGroup": "radioButtonColors"
+          },
+          {
+            "Type": "RadioButton",
+            "Name": "radioViolet",
+            "X": 50,
+            "Y": 100,
+            "Width": 50,
+            "Height": 50,
+            "FileNameSelected": "violetSelRel.png",
+            "FileNameSelectedPressed": "violetSelPre.png",
+            "FileNameUnselected": "violetRelRel.png",
+            "FileNameUnselectedPressed": "violetRelPre.png",
+            "RadioButtonGroup": "radioButtonColors"
+          },
+          {
+            "Type": "RadioButton",
+            "Name": "radioMagenta",
+            "X": 50,
+            "Y": 150,
+            "Width": 50,
+            "Height": 50,
+            "FileNameSelected": "magentaSelRel.png",
+            "FileNameSelectedPressed": "magentaSelPre.png",
+            "FileNameUnselected": "magentaRelRel.png",
+            "FileNameUnselectedPressed": "magentaRelPre.png",
+            "RadioButtonGroup": "radioButtonColors"
+          },
+          {
+            "Type": "RadioButton",
+            "Name": "radioPurple",
+            "X": 50,
+            "Y": 200,
+            "Width": 50,
+            "Height": 50,
+            "FileNameSelected": "purpleSelRel.png",
+            "FileNameSelectedPressed": "purpleSelPre.png",
+            "FileNameUnselected": "purpleRelRel.png",
+            "FileNameUnselectedPressed": "purpleRelPre.png",
+            "RadioButtonGroup": "radioButtonColors"
+          },
+          {
+            "Type": "RadioButton",
+            "Name": "radioPink",
+            "Y": 200,
+            "Width": 50,
+            "Height": 50,
+            "FileNameSelected": "pinkSelRel.png",
+            "FileNameSelectedPressed": "pinkSelPre.png",
+            "FileNameUnselected": "pinkRelRel.png",
+            "FileNameUnselectedPressed": "pinkRelPre.png",
+            "RadioButtonGroup": "radioButtonColors"
+          },
+          {
+            "Type": "RadioButton",
+            "Name": "radioOrange",
+            "Y": 150,
+            "Width": 50,
+            "Height": 50,
+            "FileNameSelected": "orangeSelRel.png",
+            "FileNameSelectedPressed": "orangeSelPre.png",
+            "FileNameUnselected": "orangeRelRel.png",
+            "FileNameUnselectedPressed": "orangeRelPre.png",
+            "RadioButtonGroup": "radioButtonColors"
+          },
+          {
+            "Type": "RadioButton",
+            "Name": "radioOrangeRed",
+            "Y": 100,
+            "Width": 50,
+            "Height": 50,
+            "FileNameSelected": "OrangeRedSelRel.png",
+            "FileNameSelectedPressed": "OrangeRedSelPre.png",
+            "FileNameUnselected": "OrangeRedRelRel.png",
+            "FileNameUnselectedPressed": "OrangeRedRelPre.png",
+            "RadioButtonGroup": "radioButtonColors"
+          },
+          {
+            "Type": "RadioButton",
+            "Name": "radioCrimson",
+            "Y": 50,
+            "Width": 50,
+            "Height": 50,
+            "FileNameSelected": "crimsonSelRel.png",
+            "FileNameSelectedPressed": "crimsonSelPre.png",
+            "FileNameUnselected": "crimsonRelRel.png",
+            "FileNameUnselectedPressed": "crimsonRelPre.png",
+            "RadioButtonGroup": "radioButtonColors"
+          },
+          {
+            "Type": "RadioButton",
+            "Name": "radioRed",
+            "Width": 50,
+            "Height": 50,
+            "FileNameSelected": "redSelRel.png",
+            "FileNameSelectedPressed": "redSelPre.png",
+            "FileNameUnselected": "redRelRel.png",
+            "FileNameUnselectedPressed": "redRelPre.png",
+            "RadioButtonGroup": "radioButtonColors"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "green",
+            "Trigger": {
+              "Type": "TriggerRadioButtonSelected",
+              "TriggerComponent": "radioGreen"
+            },
+            "Action": {
+              "Type": "ActionCustom2",
+              "ActionCustomTypeName": "Call ColorContainer ColorSelected",
+              "ParameterValue": "0x008000",
+              "ActionComponent": "ColorContainer"
+            }
+          },
+          {
+            "InteractionName": "deepBlueSky",
+            "Trigger": {
+              "Type": "TriggerRadioButtonSelected",
+              "TriggerComponent": "radioDeepBlueSky"
+            },
+            "Action": {
+              "Type": "ActionCustom2",
+              "ActionCustomTypeName": "Call ColorContainer ColorSelected",
+              "ParameterValue": "0x00BFFF",
+              "ActionComponent": "ColorContainer"
+            }
+          },
+          {
+            "InteractionName": "SpringGreen",
+            "Trigger": {
+              "Type": "TriggerRadioButtonSelected",
+              "TriggerComponent": "radioSpringGreen"
+            },
+            "Action": {
+              "Type": "ActionCustom2",
+              "ActionCustomTypeName": "Call ColorContainer ColorSelected",
+              "ParameterValue": "0x00FF7F",
+              "ActionComponent": "ColorContainer"
+            }
+          },
+          {
+            "InteractionName": "LawnGreen",
+            "Trigger": {
+              "Type": "TriggerRadioButtonSelected",
+              "TriggerComponent": "radioLawnGreen"
+            },
+            "Action": {
+              "Type": "ActionCustom2",
+              "ActionCustomTypeName": "Call ColorContainer ColorSelected",
+              "ParameterValue": "0x7CFC00",
+              "ActionComponent": "ColorContainer"
+            }
+          },
+          {
+            "InteractionName": "Yellow",
+            "Trigger": {
+              "Type": "TriggerRadioButtonSelected",
+              "TriggerComponent": "radioYellow"
+            },
+            "Action": {
+              "Type": "ActionCustom2",
+              "ActionCustomTypeName": "Call ColorContainer ColorSelected",
+              "ParameterValue": "0xFFFF00",
+              "ActionComponent": "ColorContainer"
+            }
+          },
+          {
+            "InteractionName": "Blue",
+            "Trigger": {
+              "Type": "TriggerRadioButtonSelected",
+              "TriggerComponent": "radioBlue"
+            },
+            "Action": {
+              "Type": "ActionCustom2",
+              "ActionCustomTypeName": "Call ColorContainer ColorSelected",
+              "ParameterValue": "0x0000FF",
+              "ActionComponent": "ColorContainer"
+            }
+          },
+          {
+            "InteractionName": "DodgerBlue",
+            "Trigger": {
+              "Type": "TriggerRadioButtonSelected",
+              "TriggerComponent": "radioDodgerBlue"
+            },
+            "Action": {
+              "Type": "ActionCustom2",
+              "ActionCustomTypeName": "Call ColorContainer ColorSelected",
+              "ParameterValue": "0x1E90FF",
+              "ActionComponent": "ColorContainer"
+            }
+          },
+          {
+            "InteractionName": "Violet",
+            "Trigger": {
+              "Type": "TriggerRadioButtonSelected",
+              "TriggerComponent": "radioViolet"
+            },
+            "Action": {
+              "Type": "ActionCustom2",
+              "ActionCustomTypeName": "Call ColorContainer ColorSelected",
+              "ParameterValue": "0xEE82EE",
+              "ActionComponent": "ColorContainer"
+            }
+          },
+          {
+            "InteractionName": "Magenta",
+            "Trigger": {
+              "Type": "TriggerRadioButtonSelected",
+              "TriggerComponent": "radioMagenta"
+            },
+            "Action": {
+              "Type": "ActionCustom2",
+              "ActionCustomTypeName": "Call ColorContainer ColorSelected",
+              "ParameterValue": "0xFF00FF",
+              "ActionComponent": "ColorContainer"
+            }
+          },
+          {
+            "InteractionName": "Purple",
+            "Trigger": {
+              "Type": "TriggerRadioButtonSelected",
+              "TriggerComponent": "radioPurple"
+            },
+            "Action": {
+              "Type": "ActionCustom2",
+              "ActionCustomTypeName": "Call ColorContainer ColorSelected",
+              "ParameterValue": "0x800080",
+              "ActionComponent": "ColorContainer"
+            }
+          },
+          {
+            "InteractionName": "Pink",
+            "Trigger": {
+              "Type": "TriggerRadioButtonSelected",
+              "TriggerComponent": "radioPink"
+            },
+            "Action": {
+              "Type": "ActionCustom2",
+              "ActionCustomTypeName": "Call ColorContainer ColorSelected",
+              "ParameterValue": "0xFF1493",
+              "ActionComponent": "ColorContainer"
+            }
+          },
+          {
+            "InteractionName": "Orange",
+            "Trigger": {
+              "Type": "TriggerRadioButtonSelected",
+              "TriggerComponent": "radioOrange"
+            },
+            "Action": {
+              "Type": "ActionCustom2",
+              "ActionCustomTypeName": "Call ColorContainer ColorSelected",
+              "ParameterValue": "0xFFA500",
+              "ActionComponent": "ColorContainer"
+            }
+          },
+          {
+            "InteractionName": "OrangeRed",
+            "Trigger": {
+              "Type": "TriggerRadioButtonSelected",
+              "TriggerComponent": "radioOrangeRed"
+            },
+            "Action": {
+              "Type": "ActionCustom2",
+              "ActionCustomTypeName": "Call ColorContainer ColorSelected",
+              "ParameterValue": "0xFF4500",
+              "ActionComponent": "ColorContainer"
+            }
+          },
+          {
+            "InteractionName": "Crimson",
+            "Trigger": {
+              "Type": "TriggerRadioButtonSelected",
+              "TriggerComponent": "radioCrimson"
+            },
+            "Action": {
+              "Type": "ActionCustom2",
+              "ActionCustomTypeName": "Call ColorContainer ColorSelected",
+              "ParameterValue": "0xDC143C",
+              "ActionComponent": "ColorContainer"
+            }
+          },
+          {
+            "InteractionName": "Red",
+            "Trigger": {
+              "Type": "TriggerRadioButtonSelected",
+              "TriggerComponent": "radioRed"
+            },
+            "Action": {
+              "Type": "ActionCustom2",
+              "ActionCustomTypeName": "Call ColorContainer ColorSelected",
+              "ParameterValue": "0xFF0000",
+              "ActionComponent": "ColorContainer"
+            }
+          },
+          {
+            "InteractionName": "NewColorInteraction",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call ColorContainer ColorSelected"
+            },
+            "Action": {
+              "Type": "ActionEmit",
+              "TriggerCustomTypeName": "ColorContainer ColorSelected1 happens",
+              "ParameterValue": "value"
+            }
+          }
+        ],
+        "CustomTriggers": [
+          {
+            "Name": "ColorSelected1",
+            "HasValue": true,
+            "ValueType": "uint32_t"
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "ColorSelected",
+            "HasValue": true,
+            "ValueType": "uint32_t"
+          }
+        ]
+      }
+    ],
+    "Name": "GUI_sensors_light",
+    "Resolution": {
+      "Width": 480,
+      "Height": 272
+    },
+    "SelectedColorDepth": 16,
+    "StartupScreenName": "DefaultScreen",
+    "SelectedStartupLanguage": "GB",
+    "TouchGfxPath": "../Middlewares/ST/touchgfx",
+    "UIPath": ".",
+    "AvailableColorDepths": [
+      16
+    ],
+    "AvailableLCDs": {
+      "16": "LCD16bpp"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [
+      {
+        "Width": 480,
+        "Height": 272
+      }
+    ],
+    "PhysicalButtons": [],
+    "FrameworkFeatures": {
+      "LCD16bpp": {
+        "Id": "LCD16bpp",
+        "IsEnabled": true
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "PostGenerateTargetCommand": "touchgfx update_project",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "CompileTargetCommand": "make -f ../gcc/Makefile -j8",
+    "FlashTargetCommand": "make -f ../gcc/Makefile flash -j8",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Landscape",
+    "Family": "STM32F7",
+    "SubFamily": "STM32F7x6",
+    "Toolchain": "STM32CubeIDE",
+    "Platform": "m7",
+    "ProjectFile": "../STM32F746G_DISCO.ioc",
+    "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
+    "OptionalComponents": [],
+    "AdditionalFeatures": [
+      "Vector"
+    ]
+  },
+  "Version": "4.21.4",
+  "CreatedBy": "4.21.4"
+}

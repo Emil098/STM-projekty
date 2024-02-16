@@ -1,0 +1,20 @@
+Drawable.hpp:315:18:virtual void touchgfx::Drawable::setX(int16_t)	1
+Drawable.hpp:327:18:virtual void touchgfx::Drawable::setY(int16_t)	1
+Drawable.hpp:356:18:virtual void touchgfx::Drawable::setWidth(int16_t)	1
+Drawable.hpp:368:18:virtual void touchgfx::Drawable::setHeight(int16_t)	1
+Drawable.hpp:378:18:virtual void touchgfx::Drawable::childGeometryChanged()	1
+Drawable.hpp:389:18:virtual void touchgfx::Drawable::handleClickEvent(const touchgfx::ClickEvent&)	1
+Drawable.hpp:401:18:virtual void touchgfx::Drawable::handleGestureEvent(const touchgfx::GestureEvent&)	1
+Drawable.hpp:490:18:virtual void touchgfx::Drawable::handleDragEvent(const touchgfx::DragEvent&)	1
+Drawable.hpp:501:18:virtual void touchgfx::Drawable::handleTickEvent()	1
+Drawable.hpp:588:18:virtual void touchgfx::Drawable::moveTo(int16_t, int16_t)	1
+Container.hpp:165:23:virtual touchgfx::Drawable* touchgfx::Container::getFirstChild()	1
+LightContainer.hpp:10:13:LightContainer::~LightContainer()	1
+LightContainer.hpp:10:13:virtual LightContainer::~LightContainer()	1
+Drawable.hpp:121:18:virtual void touchgfx::Drawable::invalidateContent() const	2
+LightContainerBase.hpp:37:18:virtual void LightContainerBase::emitWidgetChangedCallback()	3
+Bitmap.hpp:133:14:touchgfx::BitmapId touchgfx::Bitmap::getId() const	1
+LightContainer.cpp:20:6:virtual void LightContainer::getContent(uint8_t*, bool*)	1
+LightContainer.cpp:3:1:LightContainer::LightContainer()	1
+LightContainer.cpp:8:6:virtual void LightContainer::initialize()	1
+LightContainer.cpp:13:6:virtual void LightContainer::updateContent(uint8_t, bool)	1

@@ -1,0 +1,5 @@
+bme_spi.c:31:22:bme68x_spi_read	1
+bme_spi.c:44:22:bme68x_spi_write	1
+bme_spi.c:63:6:bme68x_delay_us	1
+bme_spi.c:69:6:bme68x_check_rslt	8
+bme_spi.c:101:8:bme68x_interface_init	3

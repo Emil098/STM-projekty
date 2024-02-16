@@ -1,0 +1,11 @@
+../Drivers/my_libs/sens.c:29:7:map	32	static
+../Drivers/my_libs/sens.c:33:13:floatToUintTab	24	static
+../Drivers/my_libs/sens.c:42:13:transform_adc_to_weight	32	static
+../Drivers/my_libs/sens.c:57:6:generate_colours	32	static
+../Drivers/my_libs/sens.c:94:13:am_i_sitting	24	static
+../Drivers/my_libs/sens.c:113:13:sensors_check	48	static
+../Drivers/my_libs/sens.c:189:13:position_check	48	static
+../Drivers/my_libs/sens.c:232:6:sens_handler	8	static
+../Drivers/my_libs/sens.c:247:6:sens_reset_timestamp	4	static
+../Drivers/my_libs/sens.c:249:6:sens_calibrate	16	static
+../Drivers/my_libs/sens.c:265:6:check_are_calibrated_values_ok	16	static

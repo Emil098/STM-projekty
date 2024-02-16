@@ -1,0 +1,7 @@
+Model.cpp:5:1:Model::Model()	1
+Model.cpp:10:6:void Model::tick()	1
+Model.cpp:15:6:void Model::saveDefaultColor(unsigned int)	1
+Model.cpp:25:6:void Model::updateColor(unsigned int)	1
+Model.cpp:32:14:unsigned int Model::getDefaultColor()	1
+Model.cpp:40:6:void Model::getDefaultScreenData(color_settings_st*, enviroment_struct*)	1
+Model.cpp:47:6:void Model::updateLightInfo(color_settings_st)	1

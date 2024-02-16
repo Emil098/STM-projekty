@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="texts.xsd" Version="4.21.4">
+  <Languages>
+    <Language Id="GB" />
+  </Languages>
+  <Texts>
+    <TextGroup Id="Group1" />
+    <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_7NR0" Alignment="Left" TypographyId="custom_medium">
+        <Translation Language="GB">123456789123456789123456789123456789</Translation>
+      </Text>
+      <Text Id="__SingleUse_1YWU" Alignment="Center" TypographyId="custom_medium">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_R6V0" Alignment="Left" TypographyId="custom_medium">
+        <Translation Language="GB">123456789123456789123456789123456789</Translation>
+      </Text>
+      <Text Id="__SingleUse_DEI3" Alignment="Center" TypographyId="custom_medium">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_TKDZ" Alignment="Left" TypographyId="custom_medium">
+        <Translation Language="GB">Dodger blue</Translation>
+      </Text>
+      <Text Id="__SingleUse_13DG" Alignment="Center" TypographyId="custom_medium">
+        <Translation Language="GB">Set as default color</Translation>
+      </Text>
+      <Text Id="__SingleUse_EFJ3" Alignment="Center" TypographyId="custom_large">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_XJOZ" Alignment="Center" TypographyId="Small">
+        <Translation Language="GB">Color name</Translation>
+      </Text>
+      <Text Id="__SingleUse_CWEH" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">environmental parameters</Translation>
+      </Text>
+      <Text Id="__SingleUse_U954" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">hPa</Translation>
+      </Text>
+      <Text Id="__SingleUse_Y757" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">%</Translation>
+      </Text>
+      <Text Id="__SingleUse_X271" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">°C</Translation>
+      </Text>
+      <Text Id="__SingleUse_SEHT" Alignment="Left" TypographyId="custom_large">
+        <Translation Language="GB">1024</Translation>
+      </Text>
+      <Text Id="__SingleUse_NPYP" Alignment="Center" TypographyId="custom_large">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_1QU4" Alignment="Left" TypographyId="custom_large">
+        <Translation Language="GB">30</Translation>
+      </Text>
+      <Text Id="__SingleUse_B52E" Alignment="Center" TypographyId="custom_large">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_4H7O" Alignment="Left" TypographyId="custom_large">
+        <Translation Language="GB">24.5</Translation>
+      </Text>
+      <Text Id="__SingleUse_01JT" Alignment="Center" TypographyId="custom_large">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_AMY7" Alignment="Left" TypographyId="custom_medium">
+        <Translation Language="GB">Preassure</Translation>
+      </Text>
+      <Text Id="__SingleUse_GEFT" Alignment="Left" TypographyId="custom_medium">
+        <Translation Language="GB">Humidity</Translation>
+      </Text>
+      <Text Id="__SingleUse_H7XF" Alignment="Left" TypographyId="custom_medium">
+        <Translation Language="GB">Temperature</Translation>
+      </Text>
+      <Text Id="__SingleUse_PJIO" Alignment="Center" TypographyId="custom_medium">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+    </TextGroup>
+  </Texts>
+  <Typographies>
+    <Typography Id="Default" Font="verdana.ttf" Size="20" Bpp="4" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Small" Font="times.ttf" Size="15" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacters=" ,+,-,.,°" />
+    <Typography Id="custom_large" Font="times.ttf" Size="30" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacters="+,-, ,.,°" WildcardCharacterRanges="0-9,a-z,A-Z" />
+    <Typography Id="custom_medium" Font="times.ttf" Size="20" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacters="+, ,-,.,°,:,[,],_" WildcardCharacterRanges="0-9,a-z,A-Z" />
+  </Typographies>
+</TextDatabase>

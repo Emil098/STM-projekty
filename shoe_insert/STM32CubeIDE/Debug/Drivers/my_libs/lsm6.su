@@ -1,0 +1,4 @@
+../Drivers/my_libs/lsm6.c:19:13:LSM_readReg	32	static
+../Drivers/my_libs/lsm6.c:29:13:LSM_writeReg	32	static
+../Drivers/my_libs/lsm6.c:37:6:lsm_init	16	static
+../Drivers/my_libs/lsm6.c:65:6:handle_lsm_steps	16	static

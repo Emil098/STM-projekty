@@ -1,0 +1,15 @@
+../Drivers/my_libs/drv2605.c:205:6:Haptic_DRV2605_Haptic_DRV2605	4	static
+../Drivers/my_libs/drv2605.c:210:5:Haptic_DRV2605_readReg	32	static
+../Drivers/my_libs/drv2605.c:225:5:Haptic_DRV2605_writeReg	32	static
+../Drivers/my_libs/drv2605.c:236:5:Haptic_DRV2605_writeRegBits	24	static
+../Drivers/my_libs/drv2605.c:244:5:Haptic_DRV2605_writeRegBulk	24	static
+../Drivers/my_libs/drv2605.c:252:5:Haptic_DRV2605_writeRegScript	24	static
+../Drivers/my_libs/drv2605.c:267:5:Haptic_DRV2605_getDeviceID	16	static
+../Drivers/my_libs/drv2605.c:278:6:Haptic_DRV2605_inited	4	static
+../Drivers/my_libs/drv2605.c:287:5:Haptic_DRV2605_begin	8	static
+../Drivers/my_libs/drv2605.c:328:5:Haptic_DRV2605_setActuatorType	16	static
+../Drivers/my_libs/drv2605.c:356:5:Haptic_DRV2605_setWaveform	16	static
+../Drivers/my_libs/drv2605.c:370:5:Haptic_DRV2605_playScript	16	static
+../Drivers/my_libs/drv2605.c:381:5:Haptic_DRV2605_go	8	static
+../Drivers/my_libs/drv2605.c:388:5:Haptic_DRV2605_goWait	8	static
+../Drivers/my_libs/drv2605.c:401:5:Haptic_DRV2605_setMode	16	static

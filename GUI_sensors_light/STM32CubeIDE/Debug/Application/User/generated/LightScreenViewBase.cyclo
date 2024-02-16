@@ -1,0 +1,63 @@
+Drawable.hpp:147:23:virtual touchgfx::Drawable* touchgfx::Drawable::getFirstChild()	1
+Drawable.hpp:315:18:virtual void touchgfx::Drawable::setX(int16_t)	1
+Drawable.hpp:327:18:virtual void touchgfx::Drawable::setY(int16_t)	1
+Drawable.hpp:356:18:virtual void touchgfx::Drawable::setWidth(int16_t)	1
+Drawable.hpp:368:18:virtual void touchgfx::Drawable::setHeight(int16_t)	1
+Drawable.hpp:378:18:virtual void touchgfx::Drawable::childGeometryChanged()	1
+Drawable.hpp:389:18:virtual void touchgfx::Drawable::handleClickEvent(const touchgfx::ClickEvent&)	1
+Drawable.hpp:401:18:virtual void touchgfx::Drawable::handleGestureEvent(const touchgfx::GestureEvent&)	1
+Drawable.hpp:490:18:virtual void touchgfx::Drawable::handleDragEvent(const touchgfx::DragEvent&)	1
+Drawable.hpp:501:18:virtual void touchgfx::Drawable::handleTickEvent()	1
+Drawable.hpp:588:18:virtual void touchgfx::Drawable::moveTo(int16_t, int16_t)	1
+Drawable.hpp:703:18:virtual void touchgfx::Drawable::setupDrawChain(const touchgfx::Rect&, touchgfx::Drawable**)	1
+Screen.hpp:93:18:virtual void touchgfx::Screen::setupScreen()	1
+Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	1
+Screen.hpp:115:18:virtual void touchgfx::Screen::tearDownScreen()	1
+Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	1
+Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	1
+Widget.hpp:45:18:virtual void touchgfx::Widget::getLastChild(int16_t, int16_t, touchgfx::Drawable**)	3
+TypedText.hpp:65:13:touchgfx::TypedText::~TypedText()	1
+TextArea.hpp:48:18:virtual void touchgfx::TextArea::setWidth(int16_t)	1
+TextArea.hpp:54:18:virtual void touchgfx::TextArea::setHeight(int16_t)	1
+TextArea.hpp:60:18:virtual touchgfx::Rect touchgfx::TextArea::getSolidRect() const	1
+TextArea.hpp:89:18:virtual void touchgfx::TextArea::setAlpha(uint8_t)	1
+TextArea.hpp:127:18:virtual void touchgfx::TextArea::setXBaselineY(int16_t, int16_t)	1
+TextArea.hpp:403:41:virtual const UnicodeChar* touchgfx::TextArea::getWildcard2() const	1
+TextAreaWithWildcard.hpp:84:41:virtual const UnicodeChar* touchgfx::TextAreaWithOneWildcard::getWildcard1() const	1
+LightScreenViewBase.hpp:29:18:virtual void LightScreenViewBase::sliderChaged(uint8_t)	1
+LightScreenViewBase.hpp:38:18:virtual void LightScreenViewBase::NewColorSelected(uint32_t)	1
+LightScreenViewBase.hpp:42:18:virtual void LightScreenViewBase::updateDefaultColor()	1
+View.hpp:36:7:touchgfx::View<LightScreenPresenter>::~View()	1
+LightScreenViewBase.cpp:100:6:void LightScreenViewBase::colorContainer1ColorSelected1CallbackHandler(uint32_t)	1
+LightScreenViewBase.cpp:126:6:void LightScreenViewBase::sliderValueChangedCallbackHandler(const touchgfx::Slider&, int)	4
+Callback.hpp:290:8:touchgfx::Callback<LightScreenViewBase, const touchgfx::Slider&, int>::~Callback()	1
+Callback.hpp:357:8:touchgfx::Callback<LightScreenViewBase, const touchgfx::AbstractButton&>::~Callback()	1
+Callback.hpp:357:8:touchgfx::Callback<LightScreenViewBase, long unsigned int>::~Callback()	1
+TextAreaWithWildcard.hpp:62:7:touchgfx::TextAreaWithOneWildcard::~TextAreaWithOneWildcard()	1
+Callback.hpp:318:18:void touchgfx::Callback<dest_type, T1, T2, void>::execute(T1, T2) [with dest_type = LightScreenViewBase; T1 = const touchgfx::Slider&; T2 = int]	2
+Callback.hpp:328:18:bool touchgfx::Callback<dest_type, T1, T2, void>::isValid() const [with dest_type = LightScreenViewBase; T1 = const touchgfx::Slider&; T2 = int]	3
+Callback.hpp:386:18:void touchgfx::Callback<dest_type, T1, void, void>::execute(T1) [with dest_type = LightScreenViewBase; T1 = const touchgfx::AbstractButton&]	2
+Callback.hpp:396:18:bool touchgfx::Callback<dest_type, T1, void, void>::isValid() const [with dest_type = LightScreenViewBase; T1 = const touchgfx::AbstractButton&]	3
+Callback.hpp:386:18:void touchgfx::Callback<dest_type, T1, void, void>::execute(T1) [with dest_type = LightScreenViewBase; T1 = long unsigned int]	2
+Callback.hpp:396:18:bool touchgfx::Callback<dest_type, T1, void, void>::isValid() const [with dest_type = LightScreenViewBase; T1 = long unsigned int]	3
+TypedText.hpp:65:13:virtual touchgfx::TypedText::~TypedText()	1
+TextAreaWithWildcard.hpp:62:7:virtual touchgfx::TextAreaWithOneWildcard::~TextAreaWithOneWildcard()	1
+Callback.hpp:357:8:virtual touchgfx::Callback<LightScreenViewBase, long unsigned int>::~Callback()	1
+Callback.hpp:357:8:virtual touchgfx::Callback<LightScreenViewBase, const touchgfx::AbstractButton&>::~Callback()	1
+Callback.hpp:290:8:virtual touchgfx::Callback<LightScreenViewBase, const touchgfx::Slider&, int>::~Callback()	1
+View.hpp:36:7:virtual touchgfx::View<LightScreenPresenter>::~View()	1
+LightScreenViewBase.cpp:95:6:virtual void LightScreenViewBase::setupScreen()	1
+Drawable.hpp:121:18:virtual void touchgfx::Drawable::invalidateContent() const	2
+TextAreaWithWildcard.hpp:43:18:virtual void touchgfx::TextAreaWithWildcardBase::invalidateContent() const	1
+TextArea.hpp:111:18:virtual void touchgfx::TextArea::setBaselineY(int16_t)	1
+LightScreenViewBase.cpp:108:6:void LightScreenViewBase::buttonCallbackHandler(const touchgfx::AbstractButton&)	3
+TextAreaWithWildcard.hpp:49:36:virtual touchgfx::TextArea::BoundingArea touchgfx::TextAreaWithWildcardBase::calculateBoundingArea() const	1
+LightScreenViewBase.cpp:90:1:LightScreenViewBase::~LightScreenViewBase()	1
+LightScreenViewBase.cpp:90:1:virtual LightScreenViewBase::~LightScreenViewBase()	1
+Drawable.hpp:343:10:void touchgfx::Drawable::setXY(int16_t, int16_t)	1
+Drawable.hpp:233:10:void touchgfx::Drawable::setPosition(int16_t, int16_t, int16_t, int16_t)	1
+Widget.hpp:36:7:touchgfx::Widget::Widget()	1
+Image.hpp:50:5:touchgfx::Image::Image(const touchgfx::Bitmap&)	1
+TextArea.hpp:43:5:touchgfx::TextArea::TextArea()	1
+ButtonWithLabel.hpp:132:10:void touchgfx::ButtonWithLabel::updateTextPosition()	2
+LightScreenViewBase.cpp:9:1:LightScreenViewBase::LightScreenViewBase()	1

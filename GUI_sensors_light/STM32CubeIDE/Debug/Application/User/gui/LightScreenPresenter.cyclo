@@ -1,0 +1,8 @@
+LightScreenPresenter.hpp:28:13:LightScreenPresenter::~LightScreenPresenter()	1
+LightScreenPresenter.cpp:16:6:virtual void LightScreenPresenter::deactivate()	1
+LightScreenPresenter.hpp:28:13:virtual LightScreenPresenter::~LightScreenPresenter()	1
+LightScreenPresenter.cpp:10:6:virtual void LightScreenPresenter::activate()	1
+LightScreenPresenter.cpp:21:6:virtual void LightScreenPresenter::updateDefaultColor(long unsigned int)	1
+LightScreenPresenter.cpp:27:6:virtual void LightScreenPresenter::updateColor(long unsigned int)	1
+LightScreenPresenter.hpp:28:13:virtual void* LightScreenPresenter::_ZThn4_N20LightScreenPresenterD1Ev()	1
+LightScreenPresenter.cpp:4:1:LightScreenPresenter::LightScreenPresenter(LightScreenView&)	1

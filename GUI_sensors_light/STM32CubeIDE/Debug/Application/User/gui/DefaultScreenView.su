@@ -1,0 +1,10 @@
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	0	static
+C:/projekty/prywatne/STM-projekty/GUI_sensors_light/TouchGFX/gui/src/defaultscreen_screen/DefaultScreenView.cpp:16:6:virtual void DefaultScreenView::tearDownScreen()	0	static
+../../TouchGFX/gui/include/gui/defaultscreen_screen/DefaultScreenView.hpp:22:13:DefaultScreenView::~DefaultScreenView()	8	static
+../../TouchGFX/gui/include/gui/defaultscreen_screen/DefaultScreenView.hpp:22:13:virtual DefaultScreenView::~DefaultScreenView()	8	static
+C:/projekty/prywatne/STM-projekty/GUI_sensors_light/TouchGFX/gui/src/defaultscreen_screen/DefaultScreenView.cpp:6:1:DefaultScreenView::DefaultScreenView()	8	static
+C:/projekty/prywatne/STM-projekty/GUI_sensors_light/TouchGFX/gui/src/defaultscreen_screen/DefaultScreenView.cpp:11:6:virtual void DefaultScreenView::setupScreen()	0	static
+C:/projekty/prywatne/STM-projekty/GUI_sensors_light/TouchGFX/gui/src/defaultscreen_screen/DefaultScreenView.cpp:21:6:virtual void DefaultScreenView::ScreenRoutine()	240	static
+C:/projekty/prywatne/STM-projekty/GUI_sensors_light/TouchGFX/gui/src/defaultscreen_screen/DefaultScreenView.cpp:61:6:virtual void DefaultScreenView::LightWidgetUpdate()	24	static
+C:/projekty/prywatne/STM-projekty/GUI_sensors_light/TouchGFX/gui/src/defaultscreen_screen/DefaultScreenView.cpp:70:6:virtual void DefaultScreenView::initLightPage(color_settings_st)	16	static
