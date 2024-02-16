@@ -1,5 +1,5 @@
-Opis:
-The project includes a prototype of a website based on the lwip library. The PCB contains: the STM107VCT microcontroller and the IP178CH system (managed switch) which uses the RMII interface for communication. The website includes: index.html (home page), error.html (appears after entering the wrong website address), leds.shtml (page controlling 3 LEDs) and login.shtml (page where entering the correct login and password causes redirection to leds.shtml) This project present the capabilities of the lwip library which can both download data (using CGI) and update the content on individual pages (using SSI). Websites written in HTML are located in the Middlewares\Third_Party\LwIP\src\apps\httpd\fs\
+Description:
+This project is a prototype of a website based on the lwip library. The PCB contains: the STM107VCT microcontroller and the IP178CH system (managed switch) which uses the RMII interface for communication. The website includes: index.html (home page), error.html (appears after entering the wrong website address), leds.shtml (page controlling 3 LEDs) and login.shtml (page where entering the correct login and password causes redirection to leds.shtml) This project present the capabilities of the lwip library which can both download data (using CGI) and update the content on individual pages (using SSI). Websites written in HTML are located in the Middlewares\Third_Party\LwIP\src\apps\httpd\fs\
 
 Tips:
 - Change the macro value in the lwipopts.h library #define HTTPD_USE_CUSTOM_FSDATA 0, (folder - LWIP\Target)
