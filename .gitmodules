@@ -1,0 +1,6 @@
+[submodule "VScode_console_Unity/third_party/Unity"]
+	path = VScode_console_Unity/third_party/Unity
+	url = https://github.com/ThrowTheSwitch/Unity
+[submodule "VScode_console_Unity/third_party/cmock"]
+	path = VScode_console_Unity/third_party/cmock
+	url = https://github.com/ThrowTheSwitch/CMock

@@ -1,0 +1,27 @@
+{
+    "configurations": [
+        {
+            "name": "STM32FL0",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/Inc/*"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE",
+                "USE_HAL_DRIVER",
+                "STM32L053xx"
+            ],
+            "intelliSenseMode": "gcc-arm",
+            "compilerPath": "C:\\projekty\\prywatne\\tools\\gcc-arm-none-eabi-10.3-2021.10\\bin\\arm-none-eabi-gcc.exe",
+            "compilerArgs": [
+                "-mthumb",
+                "-mcpu=cortex-m0plus"
+            ],
+            "cppStandard": "c++17",
+            "cStandard": "c11"
+        }
+    ],
+    "version": 4
+}

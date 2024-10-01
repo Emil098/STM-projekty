@@ -1,0 +1,5 @@
+/build/*.d
+/build/*.o
+/build/*.lst
+/build/*.map
+/build/UnitTests/UT_COMPILATION_OUTPUT/

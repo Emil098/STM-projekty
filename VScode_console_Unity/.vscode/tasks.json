@@ -1,0 +1,26 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "Build all",
+            "command": "make",
+			"args": [
+				"all"
+			]
+        },
+        {
+            "type": "shell",
+            "label": "Build test",
+            "command": "make",
+			"args": [
+				"test-ra"
+			]
+        },
+        {
+            "type": "shell",
+            "label": "Flash STM32",
+            "command": "STM32_Programmer_CLI.exe -c port=swd -w build/VScode_Unity.bin 0x08000000 -rst"
+        }
+    ]
+}

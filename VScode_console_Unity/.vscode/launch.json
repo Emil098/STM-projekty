@@ -1,0 +1,48 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "UT Debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/UnitTests/UTexe/consoleToUT.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Włącz formatowanie kodu dla gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            // "preLaunchTask": "Build test"
+        },
+        {
+            "name": "STM32L0 Debug",
+            "cwd": "${workspaceFolder}",
+            "executable": "${workspaceFolder}/build/VScode_console_Unity.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            // "runToEntryPoint": "main",
+            "servertype": "stlink",
+            "device": "STM32L053R8",
+            "interface": "swd",
+            "preLaunchTask": "Build all"
+        },
+        {
+            "name": "STM32L0 Flash",
+            "type": "node-terminal",
+            "request": "launch",
+            "command": "STM32_Programmer_CLI.exe -c port=swd -w build/VScode_console_Unity.bin 0x08000000 -rst",
+            "preLaunchTask": "Build all"
+        }
+    ]
+}

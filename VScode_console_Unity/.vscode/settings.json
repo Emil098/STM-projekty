@@ -1,0 +1,18 @@
+{
+    "files.associations": {
+        "samplefiletout.h": "c",
+        "anothersamplefile.h": "c",
+        "nanoprintf.h": "c",
+        "main.h": "c",
+        "usart.h": "c",
+        "stdint.h": "c",
+        "debugprintf.h": "c",
+        "fakeuart.h": "c",
+        "unity.h": "c",
+        "debuguart.h": "c",
+        "mock_fakeuart.h": "c",
+        "mock_debuguart.h": "c",
+        "unity_fixture.h": "c",
+        "console.h": "c"
+    }
+}
