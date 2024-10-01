@@ -18,4 +18,10 @@ The project is thoroughly tested with throwtheswitch Unity Test Framework, using
 - **Testing**: Unity Test Framework, using cmock for creating mocks of the included libraries
 - **Libraries**: `nanoprintf`, `fakeUart`, `debugUart`, `debugPrintf`, `console`
 - **Programming Language**: C
-- **Tools**: Makefile, VSCode
+- **Tools**: Makefile, VSCode, STM32_Programmer_CLI
+
+## Instalation
+- **Open bash and run command** git clone --recursive https://github.com/Emil098/STM-projekty
+- **Open VScode_console_Unity folder VS Code**
+- **Via terminal you can compile project using `make all`** 
+- **Via terminal you can run all unit tests and generate coverage report by typing `make test-ra`** 

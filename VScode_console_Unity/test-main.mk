@@ -133,7 +133,7 @@ clean-test:
 	-rm -fR $(BUILD_DIR)
 
 clean-docs:
-	-rm -fR docs
+	-rm -fR $(COV_DIR)
 
 test-ra: clean-test createmock $(OBJECTS_FOLDERS) $(EXECUTE_COMPILATION) $(EXECUTE_TEST_PROGRAMS) coverage
 

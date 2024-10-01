@@ -23,7 +23,7 @@
                     "ignoreFailures": true
                 }
             ],
-            // "preLaunchTask": "Build test"
+            "preLaunchTask": "Build test"
         },
         {
             "name": "STM32L0 Debug",
