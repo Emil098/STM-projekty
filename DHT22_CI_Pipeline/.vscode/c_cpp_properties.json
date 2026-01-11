@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "name": "STM32_Unity",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/Inc/*",
+                "${workspaceFolder}/third_party/Unity/src/*",
+                "${workspaceFolder}/unit-tests/build/cmock/*"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE",
+                "UNIT_TESTING"
+            ],
+            // "intelliSenseMode": "windows-msvc-x64"
+        }
+    ],
+    "version": 4
+}

@@ -1,0 +1,25 @@
+FROM ubuntu:22.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+ENV TZ=Etc/UTC
+
+WORKDIR /workspace
+
+COPY . /workspace
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        build-essential \
+        python3 \
+        ruby-full \
+        git \
+        gcovr &&\
+    rm -rf /var/lib/apt/lists/* && \
+    rm -rf third_party && \
+    gem install bundler --no-document && \
+    git clone --depth 1 https://github.com/ThrowTheSwitch/Unity.git third_party/Unity && \
+    git clone --depth 1 --recurse-submodules https://github.com/ThrowTheSwitch/CMock.git third_party/cmock
+
+
+
+ENTRYPOINT [ "make", "test-ra" ]

@@ -1,0 +1,4 @@
+STM32CubeIDE/Debug/
+third_party/
+unit-tests/build/
+unit-tests/docs_coverage/
