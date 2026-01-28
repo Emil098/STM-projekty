@@ -14,11 +14,11 @@ RUN apt-get update && \
         ruby-full \
         git \
         gcovr &&\
-    rm -rf /var/lib/apt/lists/* && \
-    rm -rf third_party && \
-    gem install bundler --no-document && \
-    git clone --depth 1 https://github.com/ThrowTheSwitch/Unity.git third_party/Unity && \
-    git clone --depth 1 --recurse-submodules https://github.com/ThrowTheSwitch/CMock.git third_party/cmock
+    # rm -rf /var/lib/apt/lists/* && \
+    # rm -rf third_party && \
+    gem install bundler --no-document
+    # git clone --depth 1 https://github.com/ThrowTheSwitch/Unity.git third_party/Unity && \
+    # git clone --depth 1 --recurse-submodules https://github.com/ThrowTheSwitch/CMock.git third_party/cmock
 
 
 

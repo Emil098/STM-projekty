@@ -52,15 +52,15 @@ $(OBJECTS_FOLDERS):
 define COLLECT_TEST_SOURCES
 
 SRC :=
-SRC+= third_party/Unity/extras/fixture/src/unity_fixture.c 
-SRC+= third_party/Unity/src/unity.c   
-SRC+= third_party/cmock/src/cmock.c  
+SRC+= $(THIRD_PARTY_DIR)/Unity/extras/fixture/src/unity_fixture.c 
+SRC+= $(THIRD_PARTY_DIR)/Unity/src/unity.c   
+SRC+= $(THIRD_PARTY_DIR)/cmock/src/cmock.c  
 
 INC_DIR :=
-INC_DIR+= -Ithird_party/Unity/extras/fixture/src 
-INC_DIR+= -Ithird_party/Unity/extras/memory/src 
-INC_DIR+= -Ithird_party/Unity/src/ 
-INC_DIR+= -Ithird_party/cmock/src/ 
+INC_DIR+= -I$(THIRD_PARTY_DIR)/Unity/extras/fixture/src 
+INC_DIR+= -I$(THIRD_PARTY_DIR)/Unity/extras/memory/src 
+INC_DIR+= -I$(THIRD_PARTY_DIR)/Unity/src/ 
+INC_DIR+= -I$(THIRD_PARTY_DIR)/cmock/src/ 
 INC_DIR+= -Iunit-tests/build/cmock
 
 
@@ -165,7 +165,7 @@ coverage: $(COV_DIR)
 
 
 
-CMOCK_DIR = ./third_party/cmock
+CMOCK_DIR = ./$(THIRD_PARTY_DIR)/cmock
 
 $(MOCK_OUT):
 	@mkdir -p $@
