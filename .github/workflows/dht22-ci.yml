@@ -55,12 +55,25 @@ jobs:
           project-path: 'DHT22_CI_Pipeline/STM32CubeIDE'
           project-target: 'DHT22_CI_Pipeline/Debug'
 
-      - name: Upload Debug artifacts
+      - name: Build Docker image (Dockerfile-fw)
+        run: |
+          docker build \
+            -f DHT22_CI_Pipeline/Dockerfile-fw \
+            -t dht22-ci:fw \
+            DHT22_CI_Pipeline
+
+      - name: Create release firmware in container (py create_firmware.py)
+        run: |
+          docker run --rm \
+            -v "${{ github.workspace }}/DHT22_CI_Pipeline:/workspace" \
+            dht22-ci:fw
+
+      - name: Upload firmware bin artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: dht22-debug
+          name: dht22-fw
           path: |
-            DHT22_CI_Pipeline/STM32CubeIDE/Debug/*.bin
+            DHT22_CI_Pipeline/scripts/*.bin
 
   create-release:
     runs-on: ubuntu-latest
@@ -78,7 +91,7 @@ jobs:
       - name: Download Debug artifacts
         uses: actions/download-artifact@v4
         with:
-          name: dht22-debug
+          name: dht22-fw
           path: collected/build
 
       - name: Download coverage artifacts
@@ -91,19 +104,6 @@ jobs:
         run: |
           echo "=== collected ==="
           ls -R collected || true
-
-      - name: Build Docker image (Dockerfile-fw)
-        run: |
-          docker build \
-            -f DHT22_CI_Pipeline/Dockerfile-fw \
-            -t dht22-ci:fw \
-            DHT22_CI_Pipeline
-
-      - name: Create release firmware in container (py create_firmware.py)
-        run: |
-          docker run --rm \
-            -v "${{ github.workspace }}/DHT22_CI_Pipeline:/workspace" \
-            dht22-ci:fw
 
       - name: Read firmware version from DHT22_CI_Pipeline/STM32CubeIDE/Drivers/libs/version.h
         id: fwver
@@ -138,11 +138,11 @@ jobs:
       - name: Find generated firmware .bin
         id: bin-file
         run: |
-          FILE=$(ls DHT22_CI_Pipeline/scripts/*.bin)
+          FILE=$(ls collected/build/*.bin)
           
           if [ -z "$FILE" ]; then
-            echo "No .bin found in DHT22_CI_Pipeline/scripts/"
-            ls -la DHT22_CI_Pipeline/scripts || true
+            echo "No .bin found in collected/build"
+            ls -la collected/build || true
             exit 1
           fi
           
