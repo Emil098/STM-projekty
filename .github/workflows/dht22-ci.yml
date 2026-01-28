@@ -152,13 +152,13 @@ jobs:
       - name: Pack coverage reports
         id: covzip
         run: |
-          if [ ! -d "collected/coverage" ]; then
-            echo "Coverage folder not found: collected/coverage"
+          if [ ! -d "collected/test" ]; then
+            echo "Coverage folder not found: collected/test"
             exit 1
           fi
 
           ZIP="coverage_${{ steps.device.outputs.device }}_v${{ steps.fwver.outputs.version }}.zip"
-          (cd collected/coverage && zip -r "../$ZIP" .)
+          (cd collected/test && zip -r "../$ZIP" .)
           echo "zip=collected/$ZIP" >> "$GITHUB_OUTPUT"
           ls -la collected
 
