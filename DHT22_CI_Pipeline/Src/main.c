@@ -26,6 +26,7 @@
 /* USER CODE BEGIN Includes */
 #include "console.h"
 #include "hal_delay_gpio.h"
+#include "debug_uart.h"
 #include "dht22.h"
 #include "version.h"
 /* USER CODE END Includes */

@@ -1,0 +1,176 @@
+name: DHT22 CI (Docker test)
+
+on:
+  push:
+    paths:
+      - "DHT22_CI_Pipeline/**"
+      - ".github/workflows/dht22-ci.yml"
+  pull_request:
+    paths:
+      - "DHT22_CI_Pipeline/**"
+      - ".github/workflows/dht22-ci.yml"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Docker image (Dockerfile-test)
+        run: |
+          docker build \
+            -f DHT22_CI_Pipeline/Dockerfile-test \
+            -t dht22-ci:test \
+            DHT22_CI_Pipeline
+
+      - name: Run tests in container (make test-ra)
+        run: |
+          docker run --rm \
+            -v "${{ github.workspace }}/DHT22_CI_Pipeline:/workspace" \
+            dht22-ci:test
+
+      - name: Upload coverage artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: dht22-coverage
+          path: |
+            DHT22_CI_Pipeline/unit-tests/docs_coverage/**
+
+  build:
+    runs-on: ubuntu-latest
+    needs: [test]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build STM32CubeIDE project (DHT22_CI_Pipeline)
+        uses: xanderhendriks/action-build-stm32cubeide@v15.0
+        with:
+          project-path: 'DHT22_CI_Pipeline/STM32CubeIDE'
+          project-target: 'DHT22_CI_Pipeline/Debug'
+
+      - name: Upload Debug artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: dht22-debug
+          path: |
+            DHT22_CI_Pipeline/STM32CubeIDE/Debug/*.bin
+
+  create-release:
+    runs-on: ubuntu-latest
+    needs: [build]
+
+    permissions: 
+      contents: write
+
+    if: github.event_name == 'push' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download Debug artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: dht22-debug
+          path: collected/build
+
+      - name: Download coverage artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: dht22-coverage
+          path: collected/test
+
+      - name: List received files
+        run: |
+          echo "=== collected ==="
+          ls -R collected || true
+
+      - name: Build Docker image (Dockerfile-fw)
+        run: |
+          docker build \
+            -f DHT22_CI_Pipeline/Dockerfile-fw \
+            -t dht22-ci:fw \
+            DHT22_CI_Pipeline
+
+      - name: Create release firmware in container (py create_firmware.py)
+        run: |
+          docker run --rm \
+            -v "${{ github.workspace }}/DHT22_CI_Pipeline:/workspace" \
+            dht22-ci:fw
+
+      - name: Read firmware version from DHT22_CI_Pipeline/STM32CubeIDE/Drivers/libs/version.h
+        id: fwver
+        run: |
+          VERSION=$(grep -E '^#define[[:space:]]+FIRMWARE_VERSION[[:space:]]+"' \
+          DHT22_CI_Pipeline/STM32CubeIDE/Drivers/libs/version.h \
+          | sed -E 's/.*"([^"]+)".*/\1/')
+
+          if [ -z "$VERSION" ]; then
+            echo "Cannot read FIRMWARE_VERSION from DHT22_CI_Pipeline/STM32CubeIDE/Drivers/libs/version.h"
+            exit 1
+          fi
+
+          echo "Firmware version: $VERSION"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Read Device name from DHT22_CI_Pipeline/STM32CubeIDE/Drivers/libs/version.h
+        id: device
+        run: |
+          DEVICE=$(grep -E '^#define[[:space:]]+BIN_DEST_NAME[[:space:]]+"' \
+          DHT22_CI_Pipeline/STM32CubeIDE/Drivers/libs/version.h \
+          | sed -E 's/.*"([^"]+)".*/\1/')
+
+          if [ -z "$DEVICE" ]; then
+            echo "Cannot read BIN_DEST_NAME from DHT22_CI_Pipeline/STM32CubeIDE/Drivers/libs/version.h"
+            exit 1
+          fi
+
+          echo "Device name: $DEVICE"
+          echo "device=$DEVICE" >> "$GITHUB_OUTPUT"
+
+      - name: Find generated firmware .bin
+        id: bin-file
+        run: |
+          FILE=$(ls DHT22_CI_Pipeline/scripts/*.bin)
+          
+          if [ -z "$FILE" ]; then
+            echo "No .bin found in DHT22_CI_Pipeline/scripts/"
+            ls -la DHT22_CI_Pipeline/scripts || true
+            exit 1
+          fi
+          
+          echo "Found firmware file: $FILE"
+          echo "file=$FILE" >> "$GITHUB_OUTPUT"
+
+      - name: Pack coverage reports
+        id: covzip
+        run: |
+          if [ ! -d "collected/coverage" ]; then
+            echo "Coverage folder not found: collected/coverage"
+            exit 1
+          fi
+
+          ZIP="coverage_${{ steps.device.outputs.device }}_v${{ steps.fwver.outputs.version }}.zip"
+          (cd collected/coverage && zip -r "../$ZIP" .)
+          echo "zip=collected/$ZIP" >> "$GITHUB_OUTPUT"
+          ls -la collected
+
+      - name: Create GitHub Release (bin + coverage)
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: "${{ steps.device.outputs.device }}_v${{ steps.fwver.outputs.version }}"
+          name: "${{ steps.device.outputs.device }} v${{ steps.fwver.outputs.version }}"
+          generate_release_notes: true
+          files: |
+            ${{ steps.bin-file.outputs.file }}
+            ${{ steps.covzip.outputs.zip }}
+
+
+
