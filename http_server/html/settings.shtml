@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>STM32 Settings</title>
+
+  <!-- Base theme (colors, background, typography) -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Page-specific layout & components -->
+  <link rel="stylesheet" href="style_settings.css" />
+
+  <!-- Top navigation -->
+  <link rel="stylesheet" href="style_navbar.css" />
+</head>
+
+<body>
+
+  <!-- Fixed navigation bar (shared across pages) -->
+  <nav class="navbar">
+    <ul class="nav-list">
+      <li class="nav-item"><a href="dashboard.shtml">Dashboard</a></li>
+      <li class="nav-item nav-item-active"><a href="settings.shtml">Settings</a></li>
+      <li class="nav-item nav-item-logout"><a href="logout.htm">Log out</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main page content -->
+  <main class="wrap">
+
+    <!-- Spacer to prevent content from hiding under fixed navbar -->
+    <div class="nav-spacer" aria-hidden="true"></div>
+
+    <!-- Page header: title + connection status -->
+    <header class="page-head">
+      <h1>Settings</h1>
+    </header>
+
+    <!-- Two-column layout (responsive -> 1 column on smaller screens) -->
+    <section class="grid">
+
+      <!-- NETWORK SETTINGS -->
+      <div class="card">
+        <div class="card-head">
+          <div>
+            <div class="title">Network</div>
+            <div class="subtitle">IP configuration</div>
+          </div>
+
+          <!-- API endpoint label (visual hint for embedded/REST) -->
+          <div class="badge mono">/api/net</div>
+        </div>
+
+        <div class="form">
+          <label class="field">
+            <span>IP address</span>
+            <input class="input" id="ip" placeholder="192.168.1.250" inputmode="decimal" autocomplete="off" />
+          </label>
+
+          <label class="field">
+            <span>Netmask</span>
+            <input class="input" id="mask" placeholder="255.255.255.0" inputmode="decimal" autocomplete="off" />
+          </label>
+
+          <label class="field">
+            <span>Gateway</span>
+            <input class="input" id="gw" placeholder="192.168.1.1" inputmode="decimal" autocomplete="off" />
+          </label>
+
+          <div class="actions">
+            <button class="btn btn-ghost" id="btnNetReload" type="button">Reload</button>
+            <button class="btn" id="btnNetSave" type="button">Save</button>
+          </div>
+
+          <!-- Inline feedback from JS (load/save status) -->
+          <div class="hint mono" id="netHint"></div>
+        </div>
+      </div>
+
+      <!-- CREDENTIALS SETTINGS -->
+      <div class="card">
+        <div class="card-head">
+          <div>
+            <div class="title">Credentials</div>
+            <div class="subtitle">Change username / password</div>
+          </div>
+
+          <!-- API endpoint label -->
+          <div class="badge mono">/api/auth</div>
+        </div>
+
+        <div class="form">
+          <label class="field">
+            <span>New username</span>
+            <input class="input" id="user" placeholder="admin" autocomplete="off" />
+          </label>
+
+          <label class="field">
+            <span>New password</span>
+            <input class="input" id="pass" placeholder="••••••••" type="password" autocomplete="new-password" />
+          </label>
+
+          <label class="field">
+            <span>Confirm password</span>
+            <input class="input" id="pass2" placeholder="••••••••" type="password" autocomplete="new-password" />
+          </label>
+
+          <div class="actions">
+            <button class="btn btn-ghost" id="btnAuthReload" type="button">Reload</button>
+            <button class="btn" id="btnAuthSave" type="button">Save</button>
+          </div>
+
+          <!-- Inline feedback from JS (validation / API response) -->
+          <div class="hint mono" id="authHint"></div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Page logic (API calls + form handling) -->
+  <script src="settings.js"></script>
+
+</body>
+</html>

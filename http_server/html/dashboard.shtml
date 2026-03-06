@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>STM32 Sensor Dashboard</title>
+
+  <!-- Base styles + page-specific styles -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style_dashboard.css" />
+  <link rel="stylesheet" href="style_navbar.css" />
+</head>
+
+<body>
+
+  <!-- Simple navigation bar (protected by session cookie on device side) -->
+  <nav class="navbar">
+    <ul class="nav-list">
+      <li class="nav-item nav-item-active"><a href="dashboard.shtml">Dashboard</a></li>
+      <li class="nav-item"><a href="settings.shtml">Settings</a></li>
+      <li class="nav-item nav-item-logout"><a href="logout.htm">Log out</a></li>
+    </ul>
+  </nav>
+
+  <div class="wrap">
+
+    <header class="page-head">
+      <h1>DHT22 Senor</h1>
+
+      <div class="status" id="status">
+        <span class="dot bad" id="dot"></span>
+        <span id="statusText">Waiting</span>
+      </div>
+    </header>
+
+
+    <div class="grid">
+
+      <!-- ===================== TEMPERATURE ===================== -->
+      <section class="card" aria-labelledby="tempTitle">
+        <div class="toprow">
+          <div class="label" id="tempTitle">Temperature</div>
+          <div class="badge mono" id="tRange">-40…80 °C</div>
+        </div>
+
+        <div class="gauge">
+          <!--
+            SVG gauge geometry:
+            - viewBox defines a stable coordinate system for the semi-circle
+            - arc paths are fixed "assets" (used for stroke-dasharray animation)
+            - needle pivot is defined by translate(cx,cy)
+          -->
+          <svg class="gaugeSvg" viewBox="0 0 220 140" aria-label="Temperatura">
+            <!-- Background arc -->
+            <path id="tBg" class="gaugeBg"
+              d="M 20 120 A 90 90 0 0 1 200 120"
+              fill="none" stroke="var(--stroke)" stroke-width="18" stroke-linecap="round" />
+
+            <!-- Animated value arc (stroke-dasharray is controlled by dashboard.js) -->
+            <path id="tArc" class="gaugeArc"
+              d="M 20 120 A 90 90 0 0 1 200 120"
+              fill="none" stroke="#3a67ff" stroke-width="18" stroke-linecap="round"
+              stroke-dasharray="0 9999" />
+
+            <!-- Thin inner arc (visual helper) -->
+            <path id="tTick" class="gaugeTick"
+              d="M 30 120 A 80 80 0 0 1 190 120"
+              fill="none" stroke="#2a355f55" stroke-width="2" />
+
+            <!-- Needle (rotation is updated by JS) -->
+            <g id="tNeedle" class="gaugeNeedle" transform="translate(110 120) rotate(-90)">
+              <line class="needleLine" x1="0" y1="0" x2="0" y2="-78"
+                    stroke="#e8ecff" stroke-width="3" stroke-linecap="round" />
+              <circle cx="0" cy="0" r="6" fill="#e8ecff" />
+            </g>
+          </svg>
+        </div>
+
+        <div class="big">
+          <span id="tVal">--.-</span><span class="unit">°C</span>
+        </div>
+        <div class="small" id="tHint">OK</div>
+      </section>
+
+      <!-- ===================== HUMIDITY ===================== -->
+      <section class="card" aria-labelledby="humTitle">
+        <div class="toprow">
+          <div class="label" id="humTitle">Humidity</div>
+          <div class="badge mono" id="hRange">0…100 %RH</div>
+        </div>
+
+        <div class="gauge">
+          <svg class="gaugeSvg" viewBox="0 0 220 140" aria-label="Wilgotność">
+            <!-- Background arc -->
+            <path id="hBg" class="gaugeBg"
+              d="M 20 120 A 90 90 0 0 1 200 120"
+              fill="none" stroke="var(--stroke)" stroke-width="18" stroke-linecap="round" />
+
+            <!-- Animated value arc -->
+            <path id="hArc" class="gaugeArc"
+              d="M 20 120 A 90 90 0 0 1 200 120"
+              fill="none" stroke="#14f0ff" stroke-width="18" stroke-linecap="round"
+              stroke-dasharray="0 9999" />
+
+            <!-- Thin inner arc -->
+            <path id="hTick" class="gaugeTick"
+              d="M 30 120 A 80 80 0 0 1 190 120"
+              fill="none" stroke="#2a355f55" stroke-width="2" />
+
+            <!-- Needle -->
+            <g id="hNeedle" class="gaugeNeedle" transform="translate(110 120) rotate(-90)">
+              <line class="needleLine" x1="0" y1="0" x2="0" y2="-78"
+                    stroke="#e8ecff" stroke-width="3" stroke-linecap="round" />
+              <circle cx="0" cy="0" r="6" fill="#e8ecff" />
+            </g>
+          </svg>
+        </div>
+
+        <div class="big">
+          <span id="hVal">--.-</span><span class="unit">%RH</span>
+        </div>
+        <div class="small" id="hHint">OK</div>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Dashboard polling + gauge rendering logic -->
+  <script src="dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+/**
+ * style_navbar.css
+ * Fixed, glass-like navigation bar for the embedded web UI.
+ *
+ * Depends on global variables from style.css:
+ * - --page-max, --text, --muted
+ */
+
+:root{
+  /* Navbar-only tokens */
+  --nav-bg: rgba(12, 18, 38, 0.55);
+  --nav-border: rgba(255, 255, 255, 0.08);
+  --nav-shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
+
+  --chip-bg: rgba(255, 255, 255, 0.06);
+  --chip-border: rgba(255, 255, 255, 0.10);
+
+  --danger: #ff5c7a;
+}
+
+/* ===== NAVBAR CONTAINER ===== */
+.navbar{
+  position: fixed;
+  left: 50%;
+  top: 18px;
+  transform: translateX(-50%);
+  width: min(var(--page-max), calc(100% - 24px));
+  z-index: 10;
+
+  background: var(--nav-bg);
+  border: 1px solid var(--nav-border);
+  border-radius: 18px;
+
+  box-shadow: var(--nav-shadow);
+  padding: 10px 12px;
+}
+
+/* Glass effect */
+@supports ((-webkit-backdrop-filter: blur(16px)) or (backdrop-filter: blur(16px))){
+  .navbar{
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+  }
+}
+
+/* ===== LIST LAYOUT ===== */
+.nav-list{
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== ITEMS ===== */
+.nav-item{ margin: 0; padding: 0; }
+
+.nav-item a{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 40px;
+  padding: 0 16px;
+
+  color: var(--text);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: .2px;
+
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid transparent;
+  border-radius: 999px;
+
+  transition:
+    transform .15s ease,
+    background .2s ease,
+    border-color .2s ease,
+    box-shadow .2s ease;
+}
+
+.nav-item a:hover{
+  background: var(--chip-bg);
+  border-color: var(--chip-border);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  transform: translateY(-1px);
+}
+
+/* ===== ACTIVE TAB ===== */
+.nav-item-active a{
+  cursor: default;
+  background: linear-gradient(
+    135deg,
+    rgba(58, 103, 255, 0.35),
+    rgba(20, 240, 255, 0.20)
+  );
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow:
+    0 0 0 2px rgba(58, 103, 255, 0.18),
+    0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+.nav-item-active a:hover{
+  transform: none; /* active tab doesn't "bounce" */
+}
+
+/* ===== LOGOUT (subtle danger) ===== */
+.nav-item-logout a{
+  background: rgba(255, 92, 122, 0.10);
+  border-color: rgba(255, 92, 122, 0.18);
+}
+
+.nav-item-logout a:hover{
+  background: rgba(255, 92, 122, 0.16);
+  border-color: rgba(255, 92, 122, 0.28);
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 520px){
+  .navbar{
+    top: 10px;
+    border-radius: 16px;
+    padding: 8px 10px;
+  }
+
+  .nav-item a{
+    height: 38px;
+    padding: 0 12px;
+    font-size: 13px;
+  }
+}

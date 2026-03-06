@@ -1,0 +1,233 @@
+/**
+ * style_loginform.css
+ *
+ * Styles for the login page used by the STM32 embedded web interface.
+ *
+ * The layout centers a card-based login form containing username and
+ * password inputs along with a submit button. The visual style follows
+ * the same dark theme used across the dashboard and settings pages.
+ *
+ * Responsibilities of this stylesheet:
+ * - Center the login card on the page
+ * - Define the visual appearance of the login form
+ * - Style input fields and interactive states (focus/hover)
+ * - Provide a styled submit button
+ * - Display login error messages
+ *
+ * This file contains only styles required by the login page.
+ * Unused components were intentionally removed to keep the codebase
+ * minimal and clear for maintenance and portfolio presentation.
+ */
+
+ body{
+  margin:0;
+  min-height:100vh;
+  color:var(--text);
+
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+
+  background:
+    radial-gradient(1200px 600px at 20% 10%, #23306b44, transparent 60%),
+    radial-gradient(1000px 500px at 90% 20%, #1c8aa544, transparent 60%),
+    linear-gradient(180deg, var(--bg1), var(--bg2));
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:24px;   /* tylko normalny padding */
+}
+
+/* =========================================================
+   Login Page Layout
+   ========================================================= */
+
+/* 
+   Full page container used to center the login card
+   both vertically and horizontally.
+*/
+.login-page-bg {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =========================================================
+   Login Card
+   ========================================================= */
+
+/*
+   Main container for the login form.
+   Provides the visual "card" style.
+*/
+.login-bg {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+
+  width: 500px;
+  height: 580px;
+
+  border-radius: 30px;
+
+  background: #141c37;
+  border: 1px solid #2a355f;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
+}
+
+
+/* =========================================================
+   Inner Form Container
+   ========================================================= */
+
+/*
+   Positions the form inside the card and keeps it centered.
+*/
+.login-box {
+  position: absolute;
+  width: 440px;
+
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+
+  transform: translate(-50%, -50%);
+}
+
+
+/* =========================================================
+   Header
+   ========================================================= */
+
+/*
+   Login title container.
+*/
+.login-header {
+  text-align: center;
+  margin: 20px 0 40px 0;
+}
+
+/*
+   Login title text.
+*/
+.login-header header {
+  color: #e8ecff;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   Input Fields
+   ========================================================= */
+
+/*
+   Base styling for username and password fields.
+*/
+.input-box .input-field {
+  width: 100%;
+  height: 60px;
+
+  font-size: 17px;
+  padding: 0 25px;
+  margin-bottom: 15px;
+
+  border-radius: 30px;
+  border: none;
+
+  box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.05);
+
+  outline: none;
+  transition: .3s;
+
+  background: #0f1732;
+  border: 1px solid #2a355f;
+  color: #e8ecff;
+}
+
+
+/*
+   Placeholder text style.
+*/
+::placeholder {
+  font-weight: 500;
+  color: #9aa6d1;
+}
+
+
+/*
+   Slight expand animation when field is focused.
+*/
+.input-field:focus {
+  width: 105%;
+}
+
+
+/* =========================================================
+   Submit Button
+   ========================================================= */
+
+/*
+   Container for login button.
+*/
+.input-submit {
+  position: relative;
+  margin-top: 20px;
+}
+
+
+/*
+   Main login button style.
+*/
+.submit-btn {
+  width: 100%;
+  height: 60px;
+
+  background: linear-gradient(135deg, #3a67ff, #14f0ff);
+
+  color: white;
+  border: none;
+  border-radius: 30px;
+
+  cursor: pointer;
+  transition: .3s;
+
+  position: relative;
+  z-index: 1;
+}
+
+
+/*
+   Button hover animation.
+*/
+.input-submit:hover .submit-btn {
+  background: linear-gradient(135deg, #4c7cff, #2af6ff);
+  transform: scale(1.05, 1);
+}
+
+
+/* =========================================================
+   Error Message
+   ========================================================= */
+
+/*
+   Visible login error message
+   (e.g. invalid credentials).
+*/
+.login-err {
+  font-size: medium;
+  color: #F00;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+
+/*
+   Utility class used to hide the error message.
+*/
+.err-hidden {
+  display: none;
+}

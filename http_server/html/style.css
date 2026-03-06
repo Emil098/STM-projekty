@@ -1,0 +1,53 @@
+/**
+ * style.css
+ * Global base styles + theme variables for STM32 embedded dashboard UI.
+ */
+
+:root{
+  /* Theme */
+  --bg1: #0b1020;
+  --bg2: #111a33;
+
+  /* Surfaces */
+  --card: rgba(18, 26, 51, 0.80);
+
+  /* Typography / UI */
+  --text: #e8ecff;
+  --muted: #aeb7e6;
+  --stroke: #2a355f;
+
+  /* Effects */
+  --shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+
+  /* Layout */
+  --page-max: 980px;
+  --page-pad: 24px;
+
+  /* Navbar spacing (fixed header) */
+  --nav-height: 60px;       /* approximate visual height */
+  --nav-gap: 18px;          /* distance from top */
+}
+
+*{ box-sizing: border-box; }
+
+body{
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+
+  /* Background */
+  background:
+    radial-gradient(1200px 600px at 20% 10%, rgba(35, 48, 107, 0.27), transparent 60%),
+    radial-gradient(1000px 500px at 90% 20%, rgba(28, 138, 165, 0.27), transparent 60%),
+    linear-gradient(180deg, var(--bg1), var(--bg2));
+
+  /* Center content horizontally, keep a comfortable vertical flow */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  /* Make room for fixed navbar + keep consistent page padding */
+  padding: calc(var(--page-pad) + var(--nav-height) + var(--nav-gap)) var(--page-pad) var(--page-pad);
+}

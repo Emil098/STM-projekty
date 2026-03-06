@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Basic document metadata -->
+  <meta charset="UTF-8">
+
+  <!-- Compatibility mode for older versions of Internet Explorer -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Responsive layout on mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Global styles (theme, fonts, background) -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Login page specific styles -->
+  <link rel="stylesheet" href="style_loginform.css">
+
+  <title>Login</title>
+</head>
+
+<body>
+
+  <!-- Full-page container used to center the login card -->
+  <div class="login-page-bg">
+
+    <!-- Login card background -->
+    <div class="login-bg">
+
+      <!-- Inner container holding the actual form -->
+      <div class="login-box">
+
+        <!-- Login page header -->
+        <div class="login-header">
+          <header>Login</header>
+        </div>
+
+        <!--
+          Login form.
+
+          Note:
+          - No "action" or "method" attributes are used.
+          - Submission is handled by login.js using fetch/AJAX
+            to communicate with the embedded HTTP server.
+        -->
+        <form id="loginForm">
+
+          <!-- Username input -->
+          <div class="input-box">
+            <input
+              id="user"
+              type="text"
+              class="input-field"
+              placeholder="User"
+              autocomplete="off"
+              required
+              autofocus
+            >
+          </div>
+
+          <!-- Password input -->
+          <div class="input-box">
+            <input
+              id="pass"
+              type="password"
+              class="input-field"
+              placeholder="Password"
+              autocomplete="off"
+              required
+            >
+          </div>
+
+          <!-- Submit button -->
+          <div class="input-submit">
+            <button type="submit" class="submit-btn">Login</button>
+          </div>
+
+          <!--
+            Error message container.
+
+            login.js updates this element when authentication fails.
+          -->
+          <div id="errorMsg" style="color: red; margin-top: 10px;"></div>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Login logic (AJAX request + session handling) -->
+  <script src="login.js"></script>
+
+</body>
+
+</html>

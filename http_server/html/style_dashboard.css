@@ -1,0 +1,201 @@
+/**
+ * style_dashboard.css
+ * Dashboard page layout + gauge cards (STM32 DHT22 demo UI).
+ *
+ * Notes:
+ * - Colors (e.g. --card, --muted, --shadow, --stroke) are expected
+ *   to be defined in the global stylesheet (style.css).
+ * - This file focuses only on dashboard-specific components.
+ */
+
+/* ==============================
+   Layout wrapper + header row
+   ============================== */
+
+.wrap{
+  /* Center content with a comfortable maximum width */
+  width: min(980px, 100%); 
+  padding-top: 92px;
+}
+
+/* ---------- Header row ---------- */
+.page-head{
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+header{
+  display: flex;
+  gap: 14px;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+
+/* Optional subtitle (not always present on the dashboard) */
+.sub{
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+
+/* ==============================
+   Connection status chip
+   ============================== */
+
+.status{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  color: var(--muted);
+  font-size: 13px;
+
+  padding: 10px 12px;
+  border: 1px solid rgba(42, 53, 95, 0.4);
+  border-radius: 14px;
+
+  /* Semi-transparent "glass" effect */
+  background: rgba(15, 23, 50, 0.67);
+}
+
+/* Use blur only when supported (clean fallback otherwise) */
+@supports ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))){
+  .status{
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
+}
+
+.dot{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.dot.ok{  background: #26d07c; }
+.dot.bad{ background: #ff5c7a; }
+
+
+/* ==============================
+   Cards grid
+   ============================== */
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+/* Single-column layout for smaller screens */
+@media (max-width: 780px){
+  .grid{ grid-template-columns: 1fr; }
+}
+
+.card{
+  position: relative;
+  overflow: hidden;
+
+  background: var(--card);
+  border: 1px solid rgba(42, 53, 95, 0.4);
+  border-radius: 22px;
+
+  padding: 18px 18px 14px;
+  box-shadow: var(--shadow);
+}
+
+/* Soft background highlights (purely visual) */
+.card::before{
+  content: "";
+  position: absolute;
+  inset: -2px;
+
+  background:
+    radial-gradient(500px 200px at 30% 0%, rgba(58, 103, 255, 0.13), transparent 60%),
+    radial-gradient(400px 180px at 80% 10%, rgba(20, 240, 255, 0.13), transparent 55%);
+
+  pointer-events: none;
+}
+
+/* Ensure content renders above the decorative gradient */
+.card > *{
+  position: relative;
+  z-index: 1;
+}
+
+.toprow{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.label{
+  font-weight: 650;
+  letter-spacing: .2px;
+}
+
+.badge{
+  font-size: 12px;
+  color: var(--muted);
+
+  border: 1px solid rgba(42, 53, 95, 0.4);
+  background: rgba(15, 23, 50, 0.67);
+
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+
+
+/* ==============================
+   Gauge area + readouts
+   ============================== */
+
+.gauge{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 0 2px;
+}
+
+/* Keep SVG responsive (avoid hardcoding width in HTML) */
+.gaugeSvg{
+  width: min(320px, 100%);
+  height: auto;
+  display: block;
+}
+
+.big{
+  text-align: center;
+  margin-top: -6px;
+
+  font-size: 44px;
+  font-weight: 750;
+  letter-spacing: -.8px;
+  line-height: 1.05;
+}
+
+.unit{
+  font-size: 16px;
+  color: var(--muted);
+  font-weight: 600;
+  margin-left: 6px;
+}
+
+.small{
+  text-align: center;
+  color: var(--muted);
+  margin-top: 2px;
+  font-size: 13px;
+}
+
+/* Utility: monospaced text (e.g. for ranges/badges) */
+.mono{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}

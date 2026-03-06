@@ -1,0 +1,4 @@
+http_server/Debug
+http_server/Debug_CI
+http_server/Release
+scripts/*.bin

@@ -1,0 +1,275 @@
+/**
+ * style_settings.css
+ * Settings page layout + form components.
+ *
+ * Notes:
+ * - This file only contains rules used by settings.shtml.
+ * - Visual tokens (colors, typography, shadows) are expected to come from style.css.
+ * - A small fallback is provided for --border to avoid broken rendering
+ *   if the global theme is not loaded.
+ */
+
+:root{
+  /* Fallback token used by this page */
+  --border: rgba(255,255,255,0.10);
+}
+
+
+/* =========================================================
+   Page container
+   ========================================================= */
+
+/**
+ * Main content wrapper.
+ * Padding-top provides clearance for the fixed navbar.
+ */
+.wrap{
+  width: min(980px, 100%);
+  padding-top: 92px;
+}
+
+
+/* =========================================================
+   Page header
+   ========================================================= */
+
+/**
+ * Header row containing the page title (and optional future widgets).
+ * Uses flex so additional elements can be placed on the right side.
+ */
+.page-head{
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   Responsive grid layout
+   ========================================================= */
+
+/**
+ * Two-column layout on desktop,
+ * collapses to a single column on smaller screens.
+ */
+.grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+@media (max-width: 840px){
+  .grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================================================
+   Card component
+   ========================================================= */
+
+/**
+ * Card container for each settings section.
+ * Uses theme tokens for consistent look across pages.
+ */
+.card{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+
+  padding: 18px;
+  position: relative;
+  overflow: hidden; /* keeps decorative glow inside rounded corners */
+}
+
+/**
+ * Decorative glow layer.
+ * Pointer events disabled to prevent interfering with inputs/buttons.
+ */
+.card::before{
+  content:"";
+  position: absolute;
+  inset: -2px;
+  background:
+    radial-gradient(500px 200px at 30% 0%, rgba(58,103,255,0.20), transparent 60%),
+    radial-gradient(400px 180px at 80% 10%, rgba(20,240,255,0.16), transparent 55%);
+  pointer-events: none;
+}
+
+/**
+ * Ensure card content stays above the decorative background.
+ */
+.card > *{
+  position: relative;
+  z-index: 1;
+}
+
+
+/* =========================================================
+   Card header
+   ========================================================= */
+
+.card-head{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+/* Section title typography */
+.title{
+  font-weight: 750;
+  letter-spacing: .2px;
+}
+
+.subtitle{
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+
+/* =========================================================
+   API endpoint badge (visual hint for REST endpoints)
+   ========================================================= */
+
+.badge{
+  font-size: 12px;
+  color: var(--muted);
+
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(15, 23, 50, 0.55);
+
+  border-radius: 999px;
+  padding: 6px 10px;
+}
+
+
+/* =========================================================
+   Form layout
+   ========================================================= */
+
+/**
+ * Stacked form layout with consistent vertical spacing.
+ */
+.form{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/**
+ * Field wrapper: label text + input.
+ */
+.field{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field span{
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/**
+ * Input styling with subtle focus ring.
+ * Transition kept lightweight for embedded-device UIs.
+ */
+.input{
+  width: 100%;
+  padding: 12px 14px;
+
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(15, 23, 50, 0.55);
+  color: var(--text);
+
+  outline: none;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.input::placeholder{
+  color: rgba(174,183,230,0.65);
+}
+
+.input:focus{
+  border-color: rgba(58,103,255,0.65);
+  box-shadow: 0 0 0 2px rgba(58,103,255,0.18);
+}
+
+
+/* =========================================================
+   Buttons
+   ========================================================= */
+
+/**
+ * Right-aligned action row inside a card.
+ */
+.actions{
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+/**
+ * Primary button.
+ * Gradient emphasizes the primary action ("Save").
+ */
+.btn{
+  height: 40px;
+  padding: 0 16px;
+
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.14);
+
+  color: #fff;
+  background: linear-gradient(135deg, rgba(58,103,255,0.85), rgba(20,240,255,0.55));
+
+  cursor: pointer;
+  font-weight: 750;
+  letter-spacing: .2px;
+
+  transition: transform .12s ease, filter .2s ease, box-shadow .2s ease;
+}
+
+.btn:hover{
+  filter: brightness(1.08);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.45);
+  transform: translateY(-1px);
+}
+
+.btn:active{
+  transform: translateY(0);
+}
+
+/**
+ * Secondary "ghost" button used for "Reload".
+ * Shares sizing with .btn but reduces visual priority.
+ */
+.btn-ghost{
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(255,255,255,0.12);
+  color: var(--text);
+}
+
+
+/* =========================================================
+   Inline status / feedback text
+   ========================================================= */
+
+/**
+ * Hint area below action buttons.
+ * min-height prevents layout jump when text appears/disappears.
+ */
+.hint{
+  min-height: 18px;
+  font-size: 12px;
+  color: var(--muted);
+}
